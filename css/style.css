@@ -1,6 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     font-family: 'Lato', 'sans-serif';
+}
+
+.header {
+    padding: 5px 0;
 }
 
 .navigation {
@@ -59,7 +67,7 @@ body {
 }
 
 .slide-1 {
-    background: #f3f0fa url('../img/lily.png') no-repeat center right 40%;
+    background: #f3f0fa url('../img/lily.png') no-repeat center right 35%;
 }
 
 .label {
@@ -111,4 +119,76 @@ body {
 .arrow {
     width: 20px;
     height: 20px;
+}
+
+.view-button-icon {
+    height: 16px;
+    width: 16px;
+    margin-left: 10px;
+    background-image: url('../img/right-arrow-white.svg');
+}
+
+.button:hover .view-button-icon {
+    background-image: url('../img/right-arrow-black.svg');
+}
+
+.card {
+    min-height: 370px;
+    border-radius: 10px;
+    padding: 60px 46px 80px 46px;
+}
+
+.card-1 {
+    background: #e3e2e3 url('../img/flowers.png') no-repeat top right;
+    background-size: contain;    
+}
+
+.card-2 {
+    background: #ccd5e6 url('../img/pinata.png') no-repeat top right;
+    background-size: contain;
+}
+
+.card-3 {
+    background: #ccd5e6 url('../img/presents.png') no-repeat center right 20%;
+    background-size: contain;
+    padding-top: 35px;
+}
+
+.card-4 {
+    background: #e3e2e3 url('../img/candle.png') no-repeat top right;
+    background-size: contain;
+    padding-top: 35px;
+    padding-left: 25px;
+}
+
+.card-title {
+    color: #23282c;
+    font-size: 25px;
+    line-height: 30px;
+    font-family: 'Roboto Slab', serif;
+    max-width: 222px;
+    margin: 0;
+}
+
+.card-title.large {
+    max-width: 420px;
+    font-size: 40px;
+    line-height: 50px;
+    margin: 30px 0 20px 0; 
+}
+
+.card-text {
+    max-width: 176px;
+    color: #23282c;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 25px;
+}
+
+.card-text.large {
+    max-width: 320px;
+}
+
+.card-text.small {
+    max-width: 130px;
 }
