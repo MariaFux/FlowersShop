@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    font-family: 'Lato', 'sans-serif';
+}
+
 .navigation {
     list-style: none;
     padding: 0;
@@ -6,7 +11,7 @@
 .navigation-link {
     text-decoration: none;
     text-transform: uppercase;
-    color: #939699;
+    color: #23282c;
     font-family: 'Lato', 'sans-serif';
     font-style: normal;
     font-weight: 400;
@@ -31,19 +36,79 @@
     cursor: pointer;
 }
 
-button:hover {
+.button:hover {
     background: #fff;
     border: 1px solid #23282c;
     color: #23282c;
+    padding: 9px 18px;
 }
 
-button:hover .button-icon {
-    background-image: url(/img/shopping-cart-black.svg);
+.button:hover .button-icon {
+    background-image: url('../img/shopping-cart-black.svg');
 }
 
 .button-icon {
     height: 16px;
     width: 16px;
     margin-right: 10px;
-    background-image: url(/img/shopping-cart-white.svg);
+    background-image: url('../img/shopping-cart-white.svg');
+}
+
+.slide {
+    padding: 90px 0 110px 0;
+}
+
+.slide-1 {
+    background: #f3f0fa url('../img/lily.png') no-repeat center right 40%;
+}
+
+.label {
+    background-color: #f09b95;
+    border-radius: 3px;
+    padding: 5px 12px;
+    color: #fff;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.slide-title {
+    color: #23282c;
+    font-size: 55px;
+    line-height: 70px;
+    font-family: 'Roboto Slab', serif;
+    margin: 20px 0 15px 0;
+}
+
+.slide-description {
+    font-size: 18px;
+    line-height: 30px;
+    color: #23282c;
+    max-width: 335px;
+    margin-bottom: 40px;
+}
+
+.button-price {
+    margin-right: 10px;
+}
+
+.slider {
+    position: relative;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.slider-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
 }
