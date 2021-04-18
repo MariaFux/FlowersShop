@@ -1,18 +1,32 @@
-a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+.header {
+  padding: 5px 0;
 }
 
-html {
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23282c;
+  font-family: 'Lato', 'sans-serif';
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
-}
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+  line-height: 20px;
+  letter-spacing: 0.5px;
 }
 
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+.button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  background-image: url('/assets/images/shopping-cart-white.svg');
+}
+
+.button:hover .button-icon {
+  background-image: url('/assets/images/shopping-cart-black.svg');
 }

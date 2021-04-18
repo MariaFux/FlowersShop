@@ -57,7 +57,7 @@
   }
 
     .button:hover .button-icon {
-      background-image: url('~/images/shopping-cart-black.svg');
+      background-image: url('/assets/images/shopping-cart-black.svg');
     }
 
 kendo-scrollview ::ng-deep.k-scrollview-next {
