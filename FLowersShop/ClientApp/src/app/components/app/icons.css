@@ -1,0 +1,29 @@
+/*.icon-24 {
+  background-color: var(--Black-72);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  margin: auto;
+}
+
+  .icon-24:hover {
+    background-color: var(--Blue-72);
+  }
+
+  .icon-24.disabled:hover {
+    background-color: var(--Black-72);
+    cursor: not-allowed;
+  }
+
+.icon-14 {
+  background-color: var(--Black-72);
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+  margin: auto;
+}*/
+
+.up-arrow-icon {
+  mask: url(/core/images/up-arrow.svg) no-repeat center;
+  -webkit-mask: url(/core/images/up-arrow.svg) no-repeat center;
+}

@@ -1,0 +1,21 @@
+<div>
+  <kendo-scrollview [data]="items" [width]="'100%'" [height]="'568px'" [arrows]="true" [pageable]="true" [endless]="true">
+    <ng-template let-item="item">
+      <div class="slide" [ngStyle]="myStyle">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-10 offset-lg-1">
+              <span class="label">Label</span>
+              <h2 class="slide-title">Title</h2>
+              <p class="slide-description">Some text that should take 3 rows. Short description of product. Its benefits.</p>
+              <button class="button">
+                <span class="button-price">$10</span>
+                <span class="button-text">Shop now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </kendo-scrollview>
+</div>
