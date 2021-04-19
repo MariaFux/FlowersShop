@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
+    <None Remove="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -61,6 +62,7 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

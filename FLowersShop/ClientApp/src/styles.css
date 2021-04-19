@@ -7,6 +7,10 @@ body {
   font-family: 'Lato', 'sans-serif';
 }
 
+.button-price {
+  margin-right: 10px;
+}
+
 .button {
   padding: 10px 20px;
   background: #23282c;
@@ -29,3 +33,12 @@ body {
     color: #23282c;
     padding: 9px 18px;
   }
+
+.label {
+  background-color: #f09b95;
+  border-radius: 3px;
+  padding: 5px 12px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+}

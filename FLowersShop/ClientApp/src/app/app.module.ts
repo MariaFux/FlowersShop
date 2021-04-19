@@ -12,6 +12,8 @@ import { CartComponent } from './components/cart/cart.component';
 import { ImageGalleryComponent } from './components/home/image-gallery/image-gallery.component';
 import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SectionsCardsComponent } from './components/home/sections-cards/sections-cards.component';
+import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
 
 
 
@@ -22,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     CartComponent,
     ViewComponent,
-    ImageGalleryComponent
+    ImageGalleryComponent,
+    SectionsCardsComponent,
+    NewArrivalComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
