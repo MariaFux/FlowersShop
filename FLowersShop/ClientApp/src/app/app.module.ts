@@ -14,8 +14,7 @@ import { ScrollViewModule } from '@progress/kendo-angular-scrollview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SectionsCardsComponent } from './components/home/sections-cards/sections-cards.component';
 import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
-
-
+import { FooterComponent } from './components/home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.c
     ViewComponent,
     ImageGalleryComponent,
     SectionsCardsComponent,
-    NewArrivalComponent
+    NewArrivalComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
