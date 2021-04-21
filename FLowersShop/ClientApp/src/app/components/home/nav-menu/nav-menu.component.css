@@ -12,7 +12,7 @@
   text-decoration: none;
   text-transform: uppercase;
   color: #23282c;
-  font-family: 'Lato', 'sans-serif';
+  font-family: 'Roboto Slab', 'sans-serif';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -29,6 +29,10 @@
 
 .button:hover .button-icon {
   background-image: url('/assets/images/shopping-cart-black.svg');
+}
+
+.button-text {
+    font-weight: 400;
 }
 
 .menu-icon {
@@ -50,7 +54,7 @@
     width: 100%;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Lato', 'sans-serif';
+    font-family: 'Roboto Slab', 'sans-serif';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;

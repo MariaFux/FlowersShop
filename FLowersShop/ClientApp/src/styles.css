@@ -4,11 +4,13 @@
 
 body {
   margin: 0;
-  font-family: 'Lato', 'sans-serif';
+  font-family: 'Roboto Slab', 'sans-serif';
 }
 
 .button-price {
   margin-right: 10px;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 .button {
@@ -17,11 +19,12 @@ body {
   border-radius: 20px;
   color: #fff;
   border: none;
-  font-family: 'Lato', 'sans-serif';
+  font-family: 'Roboto Slab', 'sans-serif';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 300;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.5px;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -41,4 +44,5 @@ body {
   color: #fff;
   font-size: 12px;
   line-height: 15px;
+  letter-spacing: 0.5px;
 }

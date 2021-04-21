@@ -5,7 +5,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './components/app/app.component';
-import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { NavMenuComponent } from './components/home/nav-menu/nav-menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewComponent } from './components/view/view.component';
 import { CartComponent } from './components/cart/cart.component';

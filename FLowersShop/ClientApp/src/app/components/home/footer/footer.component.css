@@ -16,16 +16,19 @@
 
 .footer-menu-link {
   text-decoration: none;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.5px;
   color: #fff;
 }
 
 .footer-text {
   font-size: 14px;
   line-height: 20px;
+  letter-spacing: 0.5px;
   color: #e7d9ff;
+  font-weight: 300;
 }
 
 .social-link {
@@ -61,9 +64,11 @@
 
 .top-link-text {
   margin-right: 15px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
 }
 
 .arrow-up {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }

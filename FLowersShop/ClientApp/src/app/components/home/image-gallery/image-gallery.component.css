@@ -12,6 +12,7 @@
   font-size: 55px;
   line-height: 70px;
   font-family: 'Roboto Slab', serif;
+  font-weight: 500;
   margin: 20px 0 15px 0;
 }
 
@@ -22,34 +23,8 @@
   max-width: 335px;
   margin-bottom: 40px;
   white-space: normal;
+  font-weight: 300;
 }
-
-.button {
-  padding: 10px 20px;
-  background: #23282c;
-  border-radius: 20px;
-  color: #fff;
-  border: none;
-  font-family: 'Lato', 'sans-serif';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 14px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-  .button:hover {
-    background: #fff;
-    border: 1px solid #23282c;
-    color: #23282c;
-    padding: 9px 18px;
-  }
-
-    .button:hover .button-icon {
-      background-image: url('/assets/images/shopping-cart-black.svg');
-    }
 
 kendo-scrollview ::ng-deep.k-scrollview-next {
   right: 10%;
