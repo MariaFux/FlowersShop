@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SectionsCardsComponent } from './components/home/sections-cards/sections-cards.component';
 import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
 import { FooterComponent } from './components/home/footer/footer.component';
+import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FooterComponent } from './components/home/footer/footer.component';
     ImageGalleryComponent,
     SectionsCardsComponent,
     NewArrivalComponent,
-    FooterComponent
+    FooterComponent,
+    ScreenHeaderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
