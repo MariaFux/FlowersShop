@@ -1,3 +1,42 @@
-.size {
-    font-size: 50px;
+.cart-content {
+  margin-top: 40px;
+  flex: 1 0 auto;
+}
+
+.cart-item-content {
+    margin-top: 10px;
+}
+
+.cart-item-img {
+   width: 80px;
+}
+
+.cart-item-description {
+    margin-left: 16px;
+}
+
+.description-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.description-text {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.item-count-img {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.item-count {
+    margin: 0 5px;
+}
+
+.cart-item-price {
+    font-size: 22px;
+    font-weight: 500;
 }

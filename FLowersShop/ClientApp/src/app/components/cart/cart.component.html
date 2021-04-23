@@ -1,1 +1,35 @@
-<span class="size">Cart</span>
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-screen-header></app-screen-header>
+  <div class="cart-content container px-4 px-md-0">
+    <div class="container" *ngIf="itemsToOrder.length > 0">
+      <div class="row">
+        <h2>Заказ</h2>
+      </div>
+      <div class="row">
+        <div class="cart-item-content col-8 d-flex pl-0">
+          <div class="col-4 pl-0 d-flex align-items-center">
+            <img class="cart-item-img" src="/assets/images/lily.png" />
+            <div class="cart-item-description">
+              <p class="description-title">Лилии</p>
+              <p class="description-text">Цвет: Белый</p>
+            </div>
+          </div>
+          <div class="col-4 d-flex justify-content-center align-items-center">
+            <img class="item-count-img" src="/assets/images/minus.svg" (click)="minus()"/>
+            <span class="item-count">{{itemCount}}</span>
+            <img class="item-count-img" src="/assets/images/plus.svg" (click)="plus()"/>
+          </div>
+          <div class="col-4 d-flex justify-content-end align-items-center">
+            <span class="cart-item-price">{{itemCount * pricePerItem}} BYN</span>
+          </div>
+        </div>
+        <div class="col-4"></div>
+      </div>
+    </div>
+    <div *ngIf="itemsToOrder.length === 0">
+      <h2>В вашей корзине пока ничего нет</h2>
+      <p>Корзина ждет, что ее наполнят. Желаем приятных покупок!</p>
+    </div>
+  </div>
+  <app-footer class="flex-shrink-0"></app-footer>
+</div>
