@@ -7,6 +7,10 @@ body {
   font-family: 'Roboto Slab', 'sans-serif';
 }
 
+button:not(:disabled) {
+  outline: none;
+}
+
 .button-price {
   margin-right: 10px;
   font-weight: 500;
