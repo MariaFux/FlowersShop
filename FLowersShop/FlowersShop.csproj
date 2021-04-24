@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\app\components\cart\cart-summary\cart-summary.component.ts" />
     <None Remove="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
     <None Remove="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
     <None Remove="ClientApp\src\app\components\screen-header\screen-header.component.ts" />
@@ -64,6 +65,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\components\cart\cart-summary\cart-summary.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\components\screen-header\screen-header.component.ts" />

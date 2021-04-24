@@ -15,6 +15,7 @@ import { SectionsCardsComponent } from './components/home/sections-cards/section
 import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
+import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ScreenHeaderComponent } from './components/screen-header/screen-header.
     SectionsCardsComponent,
     NewArrivalComponent,
     FooterComponent,
-    ScreenHeaderComponent
+    ScreenHeaderComponent,
+    CartSummaryComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

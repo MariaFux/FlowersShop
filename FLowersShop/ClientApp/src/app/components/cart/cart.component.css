@@ -40,3 +40,8 @@
     font-size: 22px;
     font-weight: 500;
 }
+
+.cart-summary-block {
+    position: sticky;
+    top: 10px;
+}
