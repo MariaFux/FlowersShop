@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -15,6 +15,7 @@ import { SectionsCardsComponent } from './components/home/sections-cards/section
 import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
 import { FooterComponent } from './components/home/footer/footer.component';
 import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -27,16 +28,19 @@ import { ScreenHeaderComponent } from './components/screen-header/screen-header.
     SectionsCardsComponent,
     NewArrivalComponent,
     FooterComponent,
-    ScreenHeaderComponent
+    ScreenHeaderComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },
       { path: 'view', component: ViewComponent },
+      { path: 'profile', component: ProfileComponent },
     ]),
     BrowserAnimationsModule
   ],
