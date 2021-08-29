@@ -1,0 +1,77 @@
+.header {
+  padding: 5px 0;
+}
+
+.navigation {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navigation-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #23282c;
+  font-family: 'Roboto Slab', 'sans-serif';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+
+.button-icon {
+  height: 16px;
+  width: 16px;
+  margin-right: 10px;
+  background-image: url('/assets/images/shopping-cart-white.svg');
+}
+
+.button:hover .button-icon {
+  background-image: url('/assets/images/shopping-cart-black.svg');
+}
+
+.button-text {
+    font-weight: 400;
+}
+
+.menu-icon {
+  height: 24px;
+  width: 24px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.menu-links {
+  display: none;
+  width: 100%
+}
+
+  .menu-links a {
+    color: #23282c;
+    padding: 5px 0px;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Roboto Slab', 'sans-serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+
+@media (max-width: 992px) {
+  .cart .button {
+    padding: 10px 10px;
+  }
+
+  .button-icon {
+      margin-right: 2px;
+  }
+   
+  .logo {
+      justify-content: center;
+  }
+}

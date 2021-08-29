@@ -1,16 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+* {
+  box-sizing: border-box;
 }
 
-code {
-  color: #e01a76;
+body {
+  margin: 0;
+  font-family: 'Roboto Slab', 'sans-serif';
 }
 
-.btn-primary {
+button:not(:disabled) {
+  outline: none;
+}
+
+.button-price {
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.button {
+  padding: 10px 20px;
+  background: #23282c;
+  border-radius: 20px;
   color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+  border: none;
+  font-family: 'Roboto Slab', 'sans-serif';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+  .button:hover {
+    background: #fff;
+    border: 1px solid #23282c;
+    color: #23282c;
+    padding: 9px 18px;
+  }
+
+.label {
+  background-color: #f09b95;
+  border-radius: 3px;
+  padding: 5px 12px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
 }

@@ -1,0 +1,93 @@
+.view-button-icon {
+  height: 16px;
+  width: 16px;
+  margin-left: 10px;
+  background-image: url('/assets/images/right-arrow-white.svg');
+}
+
+.button:hover .view-button-icon {
+  background-image: url('/assets/images/right-arrow-black.svg');
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  min-height: 330px;
+  border-radius: 10px;
+  padding: 40px 46px 60px 46px;
+}
+
+.card-btn {
+  width: 100px;
+  position: absolute;
+  bottom: 40px;
+}
+
+.card-1 {
+  background: #e3e2e3 url('/assets/images/flowers.png') no-repeat bottom -90px center;
+  background-size: contain;
+}
+
+.card-2 {
+  background: #ccd5e6 url('/assets/images/pinata.png') no-repeat bottom -115px center;
+  background-size: contain;
+}
+
+.card-3 {
+  background: #e3e2e3 url('/assets/images/candle.png') no-repeat bottom -120px center;
+  background-size: contain;
+}
+
+.card-title {
+  color: #23282c;
+  font-size: 25px;
+  line-height: 30px;
+  font-family: 'Roboto Slab', serif;
+  max-width: 222px;
+  margin: 0;
+}
+
+  .card-title.large {
+    max-width: 420px;
+    font-size: 40px;
+    line-height: 50px;
+    margin: 30px 0 20px 0;
+  }
+
+.card-text {
+  max-width: 220px;
+  color: #23282c;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  margin-bottom: 25px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+  .card-text.large {
+    max-width: 320px;
+  }
+
+@media (max-width: 1200px) {
+  .card-1 {
+    background-position: bottom -110px center;
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 30px;
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 300px) {
+  .card-1 {
+    background-position: bottom -35px center;
+  }
+
+  .card-2 {
+    background-position: bottom -80px center;
+  }
+}

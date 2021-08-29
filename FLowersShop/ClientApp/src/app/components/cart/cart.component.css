@@ -1,3 +1,162 @@
-.size {
-    font-size: 50px;
+.cart-content {
+  margin-top: 40px;
+  flex: 1 0 auto;
 }
+
+.cart-item-content {
+    margin-top: 10px;
+}
+
+.cart-item-img {
+   width: 80px;
+}
+
+.cart-item-description {
+    margin-left: 16px;
+}
+
+.description-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.description-text {
+  font-size: 13px;
+  margin-bottom: 0;
+}
+
+.item-count-img {
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+}
+
+.item-count {
+    margin: 0 5px;
+}
+
+.cart-item-price {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.cart-summary-block {
+    position: sticky;
+    top: 50px;
+}
+
+/*delivery*/
+.delivery-title {
+    margin: 40px 0 25px 0;
+}
+
+.delivery-btn {
+  color: #23282c;
+  background: rgba(35, 40, 44, 0.05);
+  border: none;
+  padding: 9px 0;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.disabled-btn {
+    border: 1px solid #23282c;
+    color: #23282c;
+    background: none;
+    border-radius: 5px;
+    padding: 8px 0;
+    margin: 0;
+}
+
+.address-radio {
+    cursor: pointer;
+}
+
+.address-form-label {
+    margin-top: 2px;
+    margin-bottom: 20px !important;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.radio-items {
+  margin-bottom: 25px;
+}
+
+input[type="radio"] {
+  /*remove standard background appearance*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /*create custom radiobutton appearance*/
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  background-clip: content-box;
+  border: 2px solid #23282c;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+  input[type="radio"]:checked {
+    background-color: #23282c;
+  }
+
+input:focus-visible {
+  outline: none;
+}
+
+.address-form {
+  margin: 24px 0 41px 0;
+}
+
+.delivery-form {
+  margin: 25px 0 41px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 24px 40px;
+}
+
+  .delivery-form label, .address-form label {
+    margin-bottom: 4px;
+  }
+
+  .delivery-form input, .address-form .address-form-input {
+    border: 1px solid rgba(35, 40, 44, 0.3);
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+    .delivery-form input:focus, .address-form .address-form-input:focus {
+      border: 1px solid #23282c;
+    }
+
+.input-sup {
+  color: #ec6d6d;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.button {
+  margin-top: 10px;
+  border-radius: 5px;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+  .button:hover {
+    font-weight: 500;
+  }
+
+input.ng-invalid.ng-touched, .address-form-input.ng-invalid.ng-touched {
+  border: 1px solid #ec6d6d;
+}
+
+  input.ng-invalid.ng-touched:focus, .address-form-input.ng-invalid.ng-touched:focus {
+    border: 1px solid #ec6d6d;
+  }

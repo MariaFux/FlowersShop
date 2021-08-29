@@ -53,6 +53,14 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
+            },
+            "hmr": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.hmr.ts"
+                }
+              ]
             }
           }
         },
@@ -64,6 +72,10 @@
           "configurations": {
             "production": {
               "browserTarget": "FlowersShop:build:production"
+            },
+            "hmr": {
+              "hmr": true,
+              "browserTarget": "FlowersShop:build:hmr"
             }
           }
         },
