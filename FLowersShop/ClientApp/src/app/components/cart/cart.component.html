@@ -1,5 +1,5 @@
 <div class="d-flex flex-column" style="height: 100vh">
-  <app-screen-header></app-screen-header>
+  <app-screen-header [headerText]="headerText"></app-screen-header>
   <div class="cart-content container px-4 px-md-0">
     <div class="container" *ngIf="itemsToOrder.length > 0">
       <div class="row">

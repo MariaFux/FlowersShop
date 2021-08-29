@@ -8,6 +8,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  headerText = "Корзина";
+
   itemsToOrder: any[] = [{sdf: 1}];
   itemCount: number = 9;
   pricePerItem: number = 7;
