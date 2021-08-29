@@ -13,8 +13,9 @@ import { ImageGalleryComponent } from './components/home/image-gallery/image-gal
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SectionsCardsComponent } from './components/home/sections-cards/sections-cards.component';
 import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.component';
-import { FooterComponent } from './components/home/footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
+import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ProfileComponent } from './components/profile/profile.component';
     NewArrivalComponent,
     FooterComponent,
     ScreenHeaderComponent,
+    CartSummaryComponent,
     ProfileComponent
   ],
   imports: [

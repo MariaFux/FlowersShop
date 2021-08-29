@@ -1,1 +1,130 @@
-<span class="size">Cart</span>
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-screen-header></app-screen-header>
+  <div class="cart-content container px-4 px-md-0">
+    <div class="container" *ngIf="itemsToOrder.length > 0">
+      <div class="row">
+        <div class="col-9 d-flex pl-0 pr-5 flex-column">
+          <!--replace to ngFor-->
+          <h2>Заказ</h2>
+          <div class="cart-item-content d-flex w-100">
+            <div class="col-4 pl-0 d-flex align-items-center">
+              <img class="cart-item-img" src="/assets/images/lily.png" />
+              <div class="cart-item-description">
+                <p class="description-title">Лилии</p>
+                <p class="description-text">Цвет: Белый</p>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <img class="item-count-img" src="/assets/images/minus.svg" (click)="minus()" />
+              <span class="item-count">{{itemCount}}</span>
+              <img class="item-count-img" src="/assets/images/plus.svg" (click)="plus()" />
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <span class="cart-item-price">{{itemCount * pricePerItem}} BYN</span>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="col-4 pl-0 d-flex align-items-center">
+              <img class="cart-item-img" src="/assets/images/lily.png" />
+              <div class="cart-item-description">
+                <p class="description-title">Лилии</p>
+                <p class="description-text">Цвет: Белый</p>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <img class="item-count-img" src="/assets/images/minus.svg" (click)="minus()" />
+              <span class="item-count">{{itemCount}}</span>
+              <img class="item-count-img" src="/assets/images/plus.svg" (click)="plus()" />
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <span class="cart-item-price">{{itemCount * pricePerItem}} BYN</span>
+            </div>
+          </div>
+          <div class="d-flex w-100">
+            <div class="col-4 pl-0 d-flex align-items-center">
+              <img class="cart-item-img" src="/assets/images/lily.png" />
+              <div class="cart-item-description">
+                <p class="description-title">Лилии</p>
+                <p class="description-text">Цвет: Белый</p>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center align-items-center">
+              <img class="item-count-img" src="/assets/images/minus.svg" (click)="minus()" />
+              <span class="item-count">{{itemCount}}</span>
+              <img class="item-count-img" src="/assets/images/plus.svg" (click)="plus()" />
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <span class="cart-item-price">{{itemCount * pricePerItem}} BYN</span>
+            </div>
+          </div>
+          <div class="d-flex w-100 flex-column">
+            <h2 class="delivery-title">Способ доставки</h2>
+            <div class="row">
+              <div class="col-6 pr-0">
+                <button class="w-100 delivery-btn" [ngClass]="{'disabled-btn': isPickUpPoint}" [disabled]="isPickUpPoint" (click)="onPickUpPointClick()">Самовывоз</button>
+              </div>
+              <div class="col-6 pl-0">
+                <button class="w-100 delivery-btn" [ngClass]="{'disabled-btn': isDelivery}" [disabled]="isDelivery" (click)="onDeliveryClick()">Доставка</button>
+              </div>
+              <div *ngIf="isPickUpPoint" class="col-12 d-flex flex-column address-form" [formGroup]="addressForm">
+                <label class="address-form-label">Личные данные</label>
+                <label for="surname">Фамилия<sup class="input-sup">*</sup></label>
+                <input type="text" id="surname" formControlName="surname" class="address-form-input" />
+                <label for="name">Имя<sup class="input-sup">*</sup></label>
+                <input type="text" id="name" formControlName="name" class="address-form-input" />
+                <label for="phone">Телефон<sup class="input-sup">*</sup></label>
+                <input type="tel" id="phone" formControlName="phone" class="address-form-input" />
+                <label for="shopAddress" class="address-form-label">Адрес магазина</label>
+                <div class="d-flex flex-column radio-items">
+                  <div *ngFor="let address of addresses; let i = index" id="shopAddress">
+                    <label class="d-flex align-items-center address-radio">
+                      <input type="radio" class="mr-2" formControlName="address" [value]="address.id">
+                      {{address.name}}
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <iframe *ngIf="addressForm.get('address').value === 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d569.3240252397419!2d30.24472197044752!3d55.19558141275486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c576b2f778adf1%3A0x9f13a401cdc088c!2z0L_RgNC-0YHQv9C10LrRgiDQpNGA0YPQvdC30LUgODAvMSwg0JLQuNGC0LXQsdGB0Lo!5e0!3m2!1sru!2sby!4v1619255210756!5m2!1sru!2sby"
+                          width="100%" height="579" style="border:0; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2);" loading="lazy">
+                  </iframe>
+                  <iframe *ngIf="addressForm.get('address').value === 2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.20842518181!2d30.23862781617127!3d55.197114780408285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c576ad748a061b%3A0xdd1868c4ce087c46!2z0YPQu9C40YbQsCDQnNC40YDQsCAyNiwg0JLQuNGC0LXQsdGB0Lo!5e0!3m2!1sru!2sby!4v1619261067489!5m2!1sru!2sby"
+                          width="100%" height="579" style="border:0; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2);" loading="lazy"></iframe>
+                </div>
+              </div>
+              <div *ngIf="isDelivery" class="col-12 d-flex justify-content-center">
+                <div class="d-flex flex-column col-7 delivery-form" [formGroup]="deliveryForm">
+                  <label for="surname">Фамилия<sup class="input-sup">*</sup></label>
+                  <input type="text" id="surname" formControlName="surname" />
+                  <label for="name">Имя<sup class="input-sup">*</sup></label>
+                  <input type="text" id="name" formControlName="name" />
+                  <label for="phone">Телефон<sup class="input-sup">*</sup></label>
+                  <input type="tel" id="phone" formControlName="phone" />
+                  <label for="street">Улица<sup class="input-sup">*</sup></label>
+                  <input type="text" id="street" formControlName="street" />
+                  <label for="house">Дом<sup class="input-sup">*</sup></label>
+                  <input type="number" id="house" formControlName="house" />
+                  <label for="flatNumber">Квартира</label>
+                  <input type="number" id="flatNumber" formControlName="flatNumber" />
+                  <label for="entrance">Подъезд</label>
+                  <input type="number" id="entrance" formControlName="entrance" />
+                  <label for="floor">Этаж</label>
+                  <input type="number" id="floor" formControlName="floor" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3 p-0">
+          <div class="cart-summary-block">
+            <app-cart-summary></app-cart-summary>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="itemsToOrder.length === 0">
+      <h2>В вашей корзине пока ничего нет</h2>
+      <p>Корзина ждет, что ее наполнят. Желаем приятных покупок!</p>
+    </div>
+  </div>
+  <app-footer class="flex-shrink-0"></app-footer>
+</div>

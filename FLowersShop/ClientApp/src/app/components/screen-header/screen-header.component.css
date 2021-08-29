@@ -15,12 +15,13 @@
 }
 
 .back-text {
-  font-size: 18px;
-  letter-spacing: 0.5px;
+  color: #23282c;
+  font-size: 15px;
 }
 
 .screen-header-title {
-    font-size: 24px;
-    letter-spacing: 0.5px;
-    font-weight: 500;
+  color: #23282c;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
