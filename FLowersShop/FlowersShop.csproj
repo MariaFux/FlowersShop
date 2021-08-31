@@ -48,7 +48,7 @@
     <Content Include="ClientApp\src\assets\images\goods4.png" />
     <Content Include="ClientApp\src\assets\images\instagram.svg" />
     <Content Include="ClientApp\src\assets\images\lily.png" />
-    <Content Include="ClientApp\src\assets\images\logo.jpg" />
+    <Content Include="ClientApp\src\assets\images\logo.png" />
     <Content Include="ClientApp\src\assets\images\mastercard.png" />
     <Content Include="ClientApp\src\assets\images\mastercard.svg" />
     <Content Include="ClientApp\src\assets\images\pinata.png" />
