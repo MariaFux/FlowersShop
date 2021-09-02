@@ -1,6 +1,12 @@
+.icon-17 {
+  height: 17px;
+  width: 17px;
+  margin-right: 10px;
+}
+
 .footer {
   background: #a883ff;
-  padding: 45px 0 30px 0;
+  padding: 25px 0 20px 0;
   color: #fff;
 }
 
@@ -8,6 +14,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.footer-menu-item {
+  cursor: pointer;
 }
 
 .footer-menu-item:not(:last-child) {
@@ -23,43 +33,77 @@
   color: #fff;
 }
 
+  .footer-menu-link:hover {
+    color: #dcf;
+  }
+
 .footer-text {
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0.5px;
   color: #e7d9ff;
   font-weight: 300;
+  cursor: default;
 }
 
-.social-link {
-  text-decoration: none;
+.footer-social {
+  margin-left: 15px;
 }
 
-  .social-link img {
-    height: 18px;
-    width: 18px;
-    margin-left: 15px;
-  }
+.instagram-icon {
+  background-image: url('/assets/images/instagram.svg');
+  cursor: pointer;
+}
+
+.link {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+}
+
+.instagram-link:hover {
+  background-image: url('/assets/images/instagram-light-gray.svg');
+}
+
+.viber-icon {
+  background-image: url('/assets/images/viber.svg');
+  cursor: pointer;
+}
+
+.viber-link:hover {
+  background-image: url('/assets/images/viber-light-gray.svg');
+}
+
+.telegram-icon {
+  background-image: url('/assets/images/telegram-white.svg');
+  cursor: pointer;
+}
+
+.telegram-link:hover {
+  background-image: url('/assets/images/telegram-light-gray.svg');
+}
 
 .footer-line {
   opacity: 0.5;
 }
 
 .footer-cards img {
-  width: 62px;
+  width: 42px;
   vertical-align: middle;
   margin-right: 25px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
   .footer-cards img:last-child {
-    height: 40.5px;
-    width: 37px
+    /*height: 30.5px;*/
+    width: 30px;
+    opacity: 1;
   }
 
 .top-link {
   text-decoration: none;
   color: #fff;
+  cursor: pointer;
 }
 
 .top-link-text {
