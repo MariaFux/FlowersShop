@@ -8,14 +8,14 @@
     <div class="col-lg-8 d-none d-lg-block">
       <div class="d-flex justify-content-around">
         <div class="d-flex align-items-center">
-          <span class="icon-24 phone-icon"></span>
+          <span class="icon-22 phone-icon"></span>
           <a href="tel:+375 (29) 777-777-77" class="phone-text">+375 (29) 777-777-77</a>
         </div>
         <div class="d-flex align-items-center">
-          <span class="icon-24 search-icon" [routerLink]="['/search']"></span>
+          <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
         </div>
         <div class="d-flex align-items-center">
-          <span class="icon-24 location-icon"></span>
+          <span class="icon-22 location-icon"></span>
           <div class="d-flex flex-column">
             <span class="address" (click)="onAddressClick()">{{address}}</span>
             <span class="schedule">Пн-Пт: 09:00-19:00, Сб-Вс: 10:00-18:00</span>
@@ -25,18 +25,16 @@
     </div>
     <div class="col-7 col-md-9 d-lg-none">
       <div class="d-flex justify-content-around">
-        <div class="d-flex align-items-center">          
-          
-          <span class="icon-24 phone-icon phone-link">
-            <a href="tel:+375 (29) 777-777-77" class="phone-link">
-          </a>
+        <div class="d-flex align-items-center">
+          <span class="icon-22 phone-icon">
+            <a href="tel:+375 (29) 777-777-77" class="phone-link"></a>
           </span>
         </div>
         <div class="d-flex align-items-center">
-          <span class="icon-24 search-icon" [routerLink]="['/search']"></span>
+          <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
         </div>
         <div class="d-flex align-items-center">
-          <span class="icon-24 location-icon location-link" (click)="onAddressClick()"></span>
+          <span class="icon-22 location-icon location-link" (click)="onAddressClick()"></span>
         </div>
       </div>
     </div>
