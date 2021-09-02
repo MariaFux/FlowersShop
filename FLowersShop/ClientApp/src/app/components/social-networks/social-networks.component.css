@@ -4,21 +4,34 @@
   margin-right: 10px;
 }
 
-.info-links a {
-    cursor: pointer;
+.social-networks-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
+.social-networks-menu-item {
+  cursor: pointer;
+}
+
+.social-networks-menu-item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.social-networks-menu-link {
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #212529;
+}
+
+  .social-networks-menu-link:hover {
+    color: #898e92;
+  }
 
 .social-networks-content {
   background-color: #fff;
 }
-
-.payment-delivery-link {
-    padding-right: 50px;
-}
-
-  .payment-delivery-link:hover, .contacts-link:hover {
-    color: #898e92;
-  }
 
 .instagram-icon {
   background-image: url('/assets/images/instagram-black.svg');
