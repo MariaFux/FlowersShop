@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,4 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  addressForm: FormGroup;
+  addresses = [{ id: 1, name: 'г. Витебск, ул. Смоленская, д.5A, пом.28, ТЦ Европа, цокольный этаж' }];
+
+  ngOnInit() {
+    this.addressForm = new FormGroup({
+      'address': new FormControl(1)
+    });
+  }
 }

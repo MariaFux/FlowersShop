@@ -1,7 +1,26 @@
-<app-nav-menu></app-nav-menu>
-<image-gallery></image-gallery>
-<div class="container pt-5 pb-4">
-  <app-sections-cards></app-sections-cards>
-  <app-new-arrival></app-new-arrival>
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-social-networks style="z-index: 1;"></app-social-networks>
+  <hr class="m-0"/>
+  <app-nav-menu style="box-shadow: 0 0 20px rgba(0,0,0,0.2);"></app-nav-menu>
+  <hr class="m-0"  />
+  <div class="home-content container pt-5 pb-4">
+    <app-sections-cards></app-sections-cards>
+  </div>
+  <div class="d-flex flex-column address-form" [formGroup]="addressForm">
+    <div class="container">
+      <label for="shopAddress" class="address-form-label">Адрес магазина</label>
+      <div class="d-flex flex-column radio-items">
+        <div *ngFor="let address of addresses; let i = index" id="shopAddress">
+          <label class="d-flex align-items-center address-radio">
+            <input type="radio" class="mr-2" formControlName="address" [value]="address.id">
+            {{address.name}}
+          </label>
+        </div>
+      </div>
+    </div>
+        <iframe *ngIf="addressForm.get('address').value === 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d338.6360775807298!2d30.231270078252713!3d55.182169426167945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c571727ac35e4f%3A0x93e74ffae15c81ef!2z0JDRgdGC0YDQsA!5e0!3m2!1sru!2sby!4v1630601959252!5m2!1sru!2sby"
+                width="100%" height="400" style="border:0; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2);" loading="lazy">
+        </iframe>
+  </div>
+  <app-footer class="flex-shrink-0" style="z-index: 1;"></app-footer>
 </div>
-<app-footer></app-footer>
