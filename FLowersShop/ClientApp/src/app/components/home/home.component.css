@@ -22,17 +22,13 @@ input[type="radio"] {
   flex: 1 0 auto;
 }
 
-.address-form {
-  margin-top: 24px;
-}
-
   .address-form label {
     margin-bottom: 4px;
   }
 
 .address-form-label {
   margin-top: 2px;
-  margin-bottom: 20px !important;
+  margin-bottom: 10px !important;
   font-size: 20px;
   font-weight: 500;
 }
