@@ -1,0 +1,38 @@
+.icon-17 {
+  height: 17px;
+  width: 17px;
+  margin-right: 10px;
+}
+
+.instagram-icon {
+  background-image: url('/assets/images/instagram-black.svg');
+  cursor: pointer;
+}
+
+.link {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+}
+
+.instagram-link:hover {
+  background-image: url('/assets/images/instagram-gray.svg');
+}
+
+.viber-icon {
+  background-image: url('/assets/images/viber-black.svg');
+  cursor: pointer;
+}
+
+.viber-link:hover {
+  background-image: url('/assets/images/viber-gray.svg');
+}
+
+.telegram-icon {
+  background-image: url('/assets/images/telegram.svg');
+  cursor: pointer;
+}
+
+.telegram-link:hover {
+  background-image: url('/assets/images/telegram-gray.svg');
+}
