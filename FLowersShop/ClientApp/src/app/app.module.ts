@@ -16,6 +16,7 @@ import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.c
 import { FooterComponent } from './components/footer/footer.component';
 import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
 import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { CartSummaryComponent } from './components/cart/cart-summary/cart-summar
     NewArrivalComponent,
     FooterComponent,
     ScreenHeaderComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -40,6 +42,7 @@ import { CartSummaryComponent } from './components/cart/cart-summary/cart-summar
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },
       { path: 'view', component: ViewComponent },
+      { path: 'search', component: SearchComponent },
     ]),
     BrowserAnimationsModule
   ],

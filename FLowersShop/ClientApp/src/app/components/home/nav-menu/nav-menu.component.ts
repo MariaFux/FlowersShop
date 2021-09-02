@@ -6,15 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-menu.component.css']
 })
 export class NavMenuComponent {
-  menuToggle() {
-    var x = document.getElementById("menuLinks");
-    if (x.style.display === "flex") {
-      x.style.display = "none";
-    } else {
-      x.style.display = "flex";
-      x.style.alignItems = "center";
-      x.style.flexDirection = "column";
-      x.style.width = "100%";
-    }
+  public address: string = "Витебск, ул. Смоленская 5A, пом. 28";
+  private url: string = "https://www.google.com/maps/place/%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA/@55.1939583,30.1248546,12z/data=!3m1!4b1!4m5!3m4!1s0x46c573e3fc7c7be7:0x430637d0624afff4!8m2!3d55.1926809!4d30.206359"
+
+  onAddressClick() {
+    window.open(this.url, '_blank');
   }
 }
