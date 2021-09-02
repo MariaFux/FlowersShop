@@ -4,6 +4,23 @@
   margin-right: 10px;
 }
 
+.info-links a {
+    cursor: pointer;
+}
+
+.social-networks-content {
+  z-index: 1;
+  background-color: #fff;
+}
+
+.payment-delivery-link {
+    padding-right: 50px;
+}
+
+  .payment-delivery-link:hover, .contacts-link:hover {
+    color: #898e92;
+  }
+
 .instagram-icon {
   background-image: url('/assets/images/instagram-black.svg');
   cursor: pointer;
