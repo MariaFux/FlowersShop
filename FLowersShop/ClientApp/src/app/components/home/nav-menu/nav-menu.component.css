@@ -31,6 +31,7 @@
   cursor: pointer;
   color: #212529;
   text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
   .phone-text:hover {
@@ -52,6 +53,7 @@
 
 .address {
   cursor: pointer;
+  letter-spacing: 0.5px;
 }
 
   .address:hover {
@@ -61,6 +63,7 @@
 .schedule {
   font-size: 14px;
   cursor: default;
+  letter-spacing: 0.5px;
 }
 
 .button-text {
