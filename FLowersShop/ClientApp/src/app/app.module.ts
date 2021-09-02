@@ -18,6 +18,7 @@ import { ScreenHeaderComponent } from './components/screen-header/screen-header.
 import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
+import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { SearchComponent } from './components/search/search.component';
     ScreenHeaderComponent,
     CartSummaryComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    SocialNetworksComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
