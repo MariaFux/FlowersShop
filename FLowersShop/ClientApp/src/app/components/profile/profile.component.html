@@ -1,0 +1,64 @@
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-screen-header [headerText]="headerText"></app-screen-header>
+  <div class="profile-content container px-4 px-md-0">
+    <div class="d-flex w-100 flex-column">
+      <div class="row">
+        <div class="col-6 pr-0">
+          <button class="w-100 login-reg-btn" [ngClass]="{'disabled-btn': isLogin}" [disabled]="isLogin" (click)="onLoginClick()">Вход</button>
+        </div>
+        <div class="col-6 pl-0">
+          <button class="w-100 login-reg-btn" [ngClass]="{'disabled-btn': isRegistration}" [disabled]="isRegistration" (click)="onRegistrationClick()">Регистрация</button>
+        </div>
+        <div *ngIf="isLogin" class="col-12 d-flex justify-content-center">
+          <div class="d-flex flex-column col-7 main-form" [formGroup]="loginForm">
+            <label for="username">Имя пользователя<sup class="input-sup">*</sup></label>
+            <input type="text" id="username" formControlName="username" />
+            <label for="password">Пароль<sup class="input-sup">*</sup></label>
+            <input type="password" id="password" formControlName="password" />
+            <div>
+              <button class="button w-100">
+                <span class="button-text d-lg-flex d-none">Войти</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isLogin" class="col-12 d-flex justify-content-center">
+          <div class="d-flex col-7 login-reg-form">
+            <p>У вас еще нет аккаунта? <a class="reg-link" (click)="onRegistrationClick()">Зарегистрироваться</a></p>
+          </div>
+        </div>
+        <div *ngIf="isRegistration" class="col-12 d-flex justify-content-center">
+          <div class="d-flex flex-column col-7 main-form" [formGroup]="registrationForm">
+            <div class="row">
+              <div class="d-flex col-6 flex-column">
+                <label for="firstName">Имя<sup class="input-sup">*</sup></label>
+                <input type="text" id="firstName" formControlName="firstName" />
+              </div>
+              <div class="d-flex col-6 flex-column">
+                <label for="lastName">Фамилия<sup class="input-sup">*</sup></label>
+                <input type="text" id="lastName" formControlName="lastName" />
+              </div>
+            </div>
+            <label for="username">Имя пользователя<sup class="input-sup">*</sup></label>
+            <input type="text" id="username" formControlName="username" />
+            <label for="password">Пароль<sup class="input-sup">*</sup></label>
+            <input type="password" id="password" formControlName="password" />
+            <label for="repeatedPassword">Повторите пароль<sup class="input-sup">*</sup></label>
+            <input type="password" id="repeatedPassword" formControlName="repeatedPassword" />
+            <div>
+              <button class="button w-100">
+                <span class="button-text d-lg-flex d-none">Регистрация</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isRegistration" class="col-12 d-flex justify-content-center">
+          <div class="d-flex col-7 login-reg-form">
+            <p>Есть аккаунт? <a class="reg-link" (click)="onLoginClick()">Вход</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer class="flex-shrink-0"></app-footer>
+</div>

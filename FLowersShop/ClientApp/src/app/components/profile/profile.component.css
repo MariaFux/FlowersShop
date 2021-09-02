@@ -1,0 +1,95 @@
+.profile-content {
+  margin-top: 40px;
+  flex: 1 0 auto;
+}
+
+.login-reg-btn {
+  color: #23282c;
+  background: rgba(35, 40, 44, 0.05);
+  border: none;
+  padding: 9px 0;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.disabled-btn {
+  border: 1px solid #23282c;
+  color: #23282c;
+  background: none;
+  border-radius: 5px;
+  padding: 8px 0;
+  margin: 0;
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+.main-form {
+  margin: 25px 0 0 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 24px 40px 30px 40px;
+}
+
+  .main-form label {
+    margin-bottom: 4px;
+  }
+
+  .main-form input {
+    border: 1px solid rgba(35, 40, 44, 0.3);
+    border-radius: 5px;
+    padding: 7px 12px;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+    .main-form input:focus {
+      border: 1px solid #23282c;
+    }
+
+.input-sup {
+  color: #ec6d6d;
+  font-size: 14px;
+  margin-left: 2px;
+}
+
+.button {
+  margin-top: 10px;
+  border-radius: 5px;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+  .button:hover {
+    font-weight: 500;
+  }
+
+.login-reg-form {
+  margin: 25px 0 41px 0;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 24px 40px;
+}
+
+.login-reg-form p {
+    margin: 0;
+}
+
+.reg-link {
+  cursor: pointer;
+  color: #6f50b5;
+}
+
+  .reg-link:hover {
+    color: #6f50b5;
+  }
+
+input.ng-invalid.ng-touched, .address-form-input.ng-invalid.ng-touched {
+  border: 1px solid #ec6d6d;
+}
+
+  input.ng-invalid.ng-touched:focus, .address-form-input.ng-invalid.ng-touched:focus {
+    border: 1px solid #ec6d6d;
+  }

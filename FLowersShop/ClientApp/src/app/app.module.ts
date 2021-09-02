@@ -16,6 +16,7 @@ import { NewArrivalComponent } from './components/home/new-arrival/new-arrival.c
 import { FooterComponent } from './components/footer/footer.component';
 import { ScreenHeaderComponent } from './components/screen-header/screen-header.component';
 import { CartSummaryComponent } from './components/cart/cart-summary/cart-summary.component';
+import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { SearchComponent } from './components/search/search.component';
     FooterComponent,
     ScreenHeaderComponent,
     CartSummaryComponent,
+    ProfileComponent,
     SearchComponent
   ],
   imports: [
@@ -42,6 +44,7 @@ import { SearchComponent } from './components/search/search.component';
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },
       { path: 'view', component: ViewComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'search', component: SearchComponent },
     ]),
     BrowserAnimationsModule
