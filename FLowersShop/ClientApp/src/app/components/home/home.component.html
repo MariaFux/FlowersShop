@@ -5,12 +5,22 @@
   <hr class="m-0"  />
   <div class="home-content container pt-5 pb-4">
     <app-sections-cards></app-sections-cards>
-  </div>
-  <div class="d-flex flex-column address-form" [formGroup]="addressForm">
-    <div class="container">
-      <label for="shopAddress" class="address-form-label">Адрес магазина</label>
+    <div class="delivery">
+      <h2 class="delivery-title">Доставка</h2>
+      <div class="delivery-text">
+        <p>Доставка по Витебску бесплатная при стоимости заказа от 15 бел.руб.</p>
+        <p>Доставка букетов производится ежедневно:</p>
+        <div class="delivery-schedule-text">
+          <p>Понедельние-Пятница: с 09:00 до 19:00;</p>
+          <p>Суббота-Воскресенье: с 10:00 до 18:00;</p>
+        </div>
+        <p>в предварительно согласованный с заказчиком интервал.</p>
+      </div>
+    </div>
+    <div class="address-form" [formGroup]="addressForm">
+      <h2 class="address-form-title">Адрес магазина</h2>
       <div class="d-flex flex-column radio-items">
-        <div *ngFor="let address of addresses; let i = index" id="shopAddress">
+        <div *ngFor="let address of addresses; let i = index">
           <label class="d-flex align-items-center address-radio">
             <input type="radio" class="mr-2" formControlName="address" [value]="address.id">
             {{address.name}}
@@ -23,6 +33,6 @@
         </iframe>
       </div>
     </div>
-  </div>
+  </div>  
   <app-footer class="flex-shrink-0" style="box-shadow: 0 0 20px rgba(0,0,0,0.2);"></app-footer>
 </div>
