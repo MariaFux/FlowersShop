@@ -8,15 +8,15 @@
   }
 
 .back-icon {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   margin-right: 12px;
   background-image: url('/assets/images/back.svg');
 }
 
 .back-text {
   color: #23282c;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .screen-header-title {

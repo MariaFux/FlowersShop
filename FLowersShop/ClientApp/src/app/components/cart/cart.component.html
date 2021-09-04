@@ -1,5 +1,7 @@
 <div class="d-flex flex-column" style="height: 100vh">
-  <app-screen-header [headerText]="headerText"></app-screen-header>
+  <app-social-networks style="z-index: 1;"></app-social-networks>
+  <hr class="m-0" />
+  <app-screen-header style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" [headerText]="headerText"></app-screen-header>
   <div class="cart-content container px-4 px-md-0">
     <div class="container" *ngIf="itemsToOrder.length > 0">
       <div class="row">
@@ -84,11 +86,9 @@
                   </div>
                 </div>
                 <div>
-                  <iframe *ngIf="addressForm.get('address').value === 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d569.3240252397419!2d30.24472197044752!3d55.19558141275486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c576b2f778adf1%3A0x9f13a401cdc088c!2z0L_RgNC-0YHQv9C10LrRgiDQpNGA0YPQvdC30LUgODAvMSwg0JLQuNGC0LXQsdGB0Lo!5e0!3m2!1sru!2sby!4v1619255210756!5m2!1sru!2sby"
+                  <iframe *ngIf="addressForm.get('address').value === 1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d338.6360775807298!2d30.231270078252713!3d55.182169426167945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c571727ac35e4f%3A0x93e74ffae15c81ef!2z0JDRgdGC0YDQsA!5e0!3m2!1sru!2sby!4v1630601959252!5m2!1sru!2sby"
                           width="100%" height="579" style="border:0; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2);" loading="lazy">
                   </iframe>
-                  <iframe *ngIf="addressForm.get('address').value === 2" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2277.20842518181!2d30.23862781617127!3d55.197114780408285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46c576ad748a061b%3A0xdd1868c4ce087c46!2z0YPQu9C40YbQsCDQnNC40YDQsCAyNiwg0JLQuNGC0LXQsdGB0Lo!5e0!3m2!1sru!2sby!4v1619261067489!5m2!1sru!2sby"
-                          width="100%" height="579" style="border:0; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.2);" loading="lazy"></iframe>
                 </div>
               </div>
               <div *ngIf="isDelivery" class="col-12 d-flex justify-content-center">
@@ -126,5 +126,5 @@
       <p>Корзина ждет, что ее наполнят. Желаем приятных покупок!</p>
     </div>
   </div>
-  <app-footer class="flex-shrink-0"></app-footer>
+  <app-footer style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" class="flex-shrink-0"></app-footer>
 </div>

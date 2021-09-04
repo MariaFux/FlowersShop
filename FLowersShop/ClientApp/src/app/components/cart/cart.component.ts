@@ -20,7 +20,7 @@ export class CartComponent implements OnInit {
   addressForm: FormGroup;
   deliveryForm: FormGroup;
 
-  addresses = [{ id: 1, name: 'г. Витебск, проспект Фрунзе, д.80/1' }, { id: 2, name: 'г. Витебск, ул. Мира, д.26' }];
+  addresses = [{ id: 1, name: 'г. Витебск, ул. Смоленская, д.5A, пом.28, ТЦ Европа, цокольный этаж' }];
 
   constructor() {
   }
