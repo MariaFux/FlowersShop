@@ -20,6 +20,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.com
     ProfileComponent,
     SearchComponent,
     SocialNetworksComponent,
-    DeliveryPayComponent
+    DeliveryPayComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -51,6 +53,7 @@ import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.com
       { path: 'profile', component: ProfileComponent },
       { path: 'search', component: SearchComponent },
       { path: 'delivery-pay', component: DeliveryPayComponent },
+      { path: 'contacts', component: ContactsComponent },
     ]),
     BrowserAnimationsModule
   ],

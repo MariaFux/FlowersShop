@@ -1,0 +1,85 @@
+.icon-19 {
+  height: 19px;
+  width: 19px;
+  margin-right: 10px;
+}
+
+.icon-22 {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+}
+
+.contacts-content {
+  margin-top: 48px;
+  flex: 1 0 auto;
+}
+
+.contacts-title {
+  color: #23282c;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.contacts-text {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+  .contacts-text p {
+    margin: 5px;
+    letter-spacing: 0.3px;
+  }
+
+.contacts-item {
+  margin-bottom: 10px;
+}
+
+.location-icon {
+  background-image: url('/assets/images/location.svg');
+}
+
+.address, .schedule {
+  cursor: default;
+  letter-spacing: 0.5px;
+}
+
+.schedule-icon {
+  background-image: url('/assets/images/schedule.svg');
+}
+
+.phone-icon {
+  background-image: url('/assets/images/phone.svg');
+}
+
+.link-text {
+  cursor: pointer;
+  color: #212529;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+  .link-text:hover {
+    color: #898e92;
+  }
+
+.instagram-icon {
+  background-image: url('/assets/images/instagram-black.svg');
+}
+
+.viber-icon {
+  background-image: url('/assets/images/viber-black.svg');
+}
+
+.telegram-icon {
+  background-image: url('/assets/images/telegram.svg');
+}
+
+.d7 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 145px solid #fff;
+  border-right: 80vw solid transparent;
+}

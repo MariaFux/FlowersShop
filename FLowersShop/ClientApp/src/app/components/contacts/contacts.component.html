@@ -1,0 +1,55 @@
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-social-networks style="z-index: 1;"></app-social-networks>
+  <hr class="m-0" />
+  <app-screen-header style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" [headerText]="headerText"></app-screen-header>
+  <div class="contacts-content px-4 px-md-0">
+    <div class="container">
+      <div class="row">
+        <div class="contacts">
+          <div class="contacts-title">Контакты</div>
+          <div class="contacts-text">
+            <div class="d-flex align-items-center contacts-item">
+              <span class="icon-22 location-icon"></span>
+              <div class="d-flex flex-column">
+                <span class="address">{{address}}</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center contacts-item">
+              <span class="icon-22 schedule-icon"></span>
+              <div class="d-flex flex-column">
+                <span class="schedule">Пн-Пт: 09:00-19:00, Сб-Вс: 10:00-18:00</span>
+              </div>
+            </div>
+            <div class="d-flex align-items-center contacts-item">
+              <span class="icon-19 phone-icon"></span>
+              <a href="tel:+375 (29) 777-777-77" class="link-text">+375 (29) 777-777-77</a>
+            </div>
+            <div class="d-flex align-items-center contacts-item">
+              <span class="icon-19 instagram-icon"></span>
+              <a href="https://www.instagram.com/astra_flowers_vitebsk/" target="_blank" class="link-text">@astra_flowers_vitebsk</a>
+            </div>
+            <div class="d-flex align-items-center contacts-item">
+              <span class="icon-19 viber-icon"></span>
+              <a href="viber://chat?number=%2B<PHONE>" target="_blank" class="link-text">Перейти в вайбер</a>
+            </div>
+            <div class="d-flex align-items-center">
+              <span class="icon-19 telegram-icon"></span>
+              <a href="https://telegram.me/<USERNAME>" target="_blank" class="link-text">Перейти в телеграм</a>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="d7"></div>
+    <div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1610.8177326086054!2d30.230079119409186!3d55.182565196411964!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x93e74ffae15c81ef!2z0KbQstC10YLQvtGH0L3Ri9C5INC80LDQs9Cw0LfQuNC9IMKr0JDRgdGC0YDQsMK7!5e0!3m2!1sru!2sby!4v1630858366490!5m2!1sru!2sby"
+              width="100%" height="400" style="border:0;" loading="lazy">
+      </iframe>
+    </div>
+  </div>
+  <div style="z-index: 1; margin-top: -6px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+    <app-footer style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" class="flex-shrink-0"></app-footer>
+  </div>
+</div>
