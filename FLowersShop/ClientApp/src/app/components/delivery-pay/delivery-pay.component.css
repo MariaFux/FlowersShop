@@ -1,0 +1,37 @@
+.delivery-pay-content {
+  margin-top: 48px;
+  flex: 1 0 auto;
+}
+
+.delivery-pay-title {
+  color: #23282c;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.delivery-pay-text {
+  padding: 10px 20px;
+}
+
+  .delivery-pay-text p {
+    margin: 5px;
+    letter-spacing: 0.3px;
+  }  
+
+.delivery-schedule-text, .pay-text {
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+  .pay-text {
+      font-size: 16px;
+  }
+
+.pay-text-item {
+  margin-bottom: 8px;
+}
+
+.pay {
+  margin: 10px 0 20px 0;
+}

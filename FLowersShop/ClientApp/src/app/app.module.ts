@@ -19,6 +19,7 @@ import { CartSummaryComponent } from './components/cart/cart-summary/cart-summar
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
+import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SocialNetworksComponent } from './components/social-networks/social-net
     CartSummaryComponent,
     ProfileComponent,
     SearchComponent,
-    SocialNetworksComponent
+    SocialNetworksComponent,
+    DeliveryPayComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -48,6 +50,7 @@ import { SocialNetworksComponent } from './components/social-networks/social-net
       { path: 'view', component: ViewComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'search', component: SearchComponent },
+      { path: 'delivery-pay', component: DeliveryPayComponent },
     ]),
     BrowserAnimationsModule
   ],
