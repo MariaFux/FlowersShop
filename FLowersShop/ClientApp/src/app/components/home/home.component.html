@@ -1,8 +1,19 @@
 <div class="d-flex flex-column" style="height: 100vh">
   <app-social-networks style="z-index: 1;"></app-social-networks>
-  <hr class="m-0"/>
+  <hr class="m-0" />
   <app-nav-menu style="box-shadow: 0 0 20px rgba(0,0,0,0.2);"></app-nav-menu>
-  <hr class="m-0"  />
+  <hr class="m-0" />
+  <div class="main-block">
+    <div class="main-block-content container">
+      <h1 class="main-block-title">Цветы</h1>
+      <h3 class="main-block-subtitle">для Ваших особых случаев</h3>
+      <div class="main-block-btn">
+        <button class="button" [routerLink]="['/search']">
+          <span class="button-text">В каталог</span>
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="home-content container pt-5 pb-4">
     <app-sections-cards></app-sections-cards>
     <div class="delivery">
@@ -40,6 +51,6 @@
         </iframe>
       </div>
     </div>
-  </div>  
+  </div>
   <app-footer class="flex-shrink-0" style="box-shadow: 0 0 20px rgba(0,0,0,0.2);"></app-footer>
 </div>
