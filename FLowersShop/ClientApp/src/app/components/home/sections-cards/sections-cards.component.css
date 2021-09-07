@@ -29,12 +29,27 @@
 }
 
 .card-2 {
-  background: #ccd5e6 url('/assets/images/pinata.png') no-repeat bottom -115px center;
+  background: #ccd5e6 url('/assets/images/bouquet.png') no-repeat bottom -85px center;
   background-size: contain;
 }
 
 .card-3 {
-  background: #e3e2e3 url('/assets/images/candle.png') no-repeat bottom -120px center;
+  background: #e3e2e3 url('/assets/images/composition.png') no-repeat bottom -70px center;
+  background-size: contain;
+}
+
+.card-4 {
+  background: #ccd5e6 url('/assets/images/balloons.png') no-repeat bottom -120px center;
+  background-size: contain;
+}
+
+.card-5 {
+  background: #e3e2e3 url('/assets/images/pinata.png') no-repeat bottom -115px center;
+  background-size: contain;
+}
+
+.card-6 {
+  background: #ccd5e6 url('/assets/images/candle.png') no-repeat bottom -120px center;
   background-size: contain;
 }
 
