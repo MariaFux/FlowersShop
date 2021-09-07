@@ -5,6 +5,11 @@ using Microsoft.AspNetCore.SpaServices.AngularCli;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.EntityFrameworkCore;
+using FlowersShop.DAL.DataContext;
+using FlowersShop.DAL.Repositories;
+using FlowersShop.BLL.Mapper;
+using AutoMapper;
 
 namespace FlowersShop
 {
@@ -20,6 +25,20 @@ namespace FlowersShop
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var ConnectionString = Configuration.GetConnectionString("DbConStr");
+
+            services.AddDbContext<FlowersShopDbContext>(options => options.UseSqlServer(ConnectionString));
+            services.AddTransient<CategoryRepo>();
+            services.AddTransient<ProductRepo>();
+
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
             services.AddControllersWithViews();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
