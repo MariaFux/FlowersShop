@@ -1,0 +1,82 @@
+.icon-22 {
+  height: 22px;
+  width: 22px;
+  margin-right: 10px;
+}
+
+.search-content {
+  margin-top: 48px;
+  flex: 1 0 auto;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+  background-image: url('/assets/images/search.svg');
+}
+
+input:focus-visible {
+  outline: none;
+}
+
+.search input {
+  border: 1px solid rgba(35, 40, 44, 0.3);
+  border-radius: 15px;
+  padding: 4px 12px;
+  font-size: 14px;
+}
+
+  .search input:focus {
+    border: 1px solid #23282c;
+  }
+
+.catalog-grid {
+    margin-top: 30px;
+    margin-bottom: 48px;
+}
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+.goods-card {
+  position: relative;
+  text-align: center;
+  padding: 30px 35px 35px 35px;
+  font-weight: 300;
+}
+
+.goods-title {
+  margin: 15px 0 5px 0;
+  font-family: 'Roboto Slab', serif;
+  font-size: 16px;
+  line-height: 25px;
+  color: #23282c;
+}
+
+.goods-description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #23282c;
+  margin: 0;
+}
+
+.goods-price {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 500;
+  color: #23282c;
+  cursor: pointer;
+}
+
+  .goods-price:hover {
+    border: 1px solid #23282c;
+    border-radius: 20px;
+    padding: 0 10px;
+    line-height: 28px;
+  }

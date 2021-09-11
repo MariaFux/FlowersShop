@@ -1,1 +1,35 @@
-<app-social-networks></app-social-networks>
+<div class="d-flex flex-column" style="height: 100vh">
+  <app-social-networks style="z-index: 1;"></app-social-networks>
+  <hr class="m-0" />
+  <app-screen-header style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" [headerText]="headerText"></app-screen-header>
+  <div class="search-content px-4 px-md-0">
+    <div class="container">
+      <div class="row">
+        <div class="d-flex justify-content-center col-12">
+          <div class="search col-8">
+            <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
+            <input type="text" class="col-11" placeholder="Поиск">
+          </div>
+        </div>
+        <div class="catalog-grid col-12">
+          <mat-grid-list cols="4" rowHeight="385px">
+            <mat-grid-tile>
+              <div class="goods-card">
+                <img src="assets/images/goods1.png" alt="image: flower" class="goods-image" />
+                <h3 class="goods-title">Гербера</h3>
+                <p class="goods-description">Желтая</p>
+                <a class="goods-price">4 BYN</a>
+              </div>
+            </mat-grid-tile>
+            <mat-grid-tile>2</mat-grid-tile>
+            <mat-grid-tile>3</mat-grid-tile>
+            <mat-grid-tile>4</mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="z-index: 1; margin-top: -6px; box-shadow: 0 0 20px rgba(0,0,0,0.2);">
+    <app-footer style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" class="flex-shrink-0"></app-footer>
+  </div>
+</div>

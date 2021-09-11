@@ -3,7 +3,7 @@
     <div class="card card-1 mb-4">
       <h3 class="card-title">Цветы</h3>
       <p class="card-text">Широкий ассортимент цветов!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'flowers'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
@@ -13,7 +13,7 @@
     <div class="card card-2 mb-4">
       <h3 class="card-title">Букеты</h3>
       <p class="card-text">Сборные и свадебные букеты!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'bouquets'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
@@ -23,7 +23,7 @@
     <div class="card card-3 mb-4">
       <h3 class="card-title">Композиции</h3>
       <p class="card-text">В шляпке, на оазисе, в корзинке!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'compositions'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
@@ -34,7 +34,7 @@
     <div class="card card-4 mb-4">
       <h3 class="card-title">Подарки</h3>
       <p class="card-text">Гелиевые шары, открытки!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'presents'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
@@ -44,7 +44,7 @@
     <div class="card card-5 mb-4">
       <h3 class="card-title">Пиньяты</h3>
       <p class="card-text">Пиньята на детский праздник сможет порадовать вашего ребенка!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'pinatas'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
@@ -54,7 +54,7 @@
     <div class="card card-6 mb-4">
       <h3 class="card-title">Свечи</h3>
       <p class="card-text">Свечи ручной работы на любой вкус и цвет!</p>
-      <button class="button card-btn">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'candles'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>

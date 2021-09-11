@@ -21,6 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { MatGridList, MatGridListModule, MatGridTile } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     SearchComponent,
     SocialNetworksComponent,
     DeliveryPayComponent,
-    ContactsComponent
+    ContactsComponent,
+    MatGridList,
+    MatGridTile
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

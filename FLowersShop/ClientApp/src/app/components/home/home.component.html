@@ -1,7 +1,7 @@
 <div class="d-flex flex-column" style="height: 100vh">
-  <app-social-networks style="z-index: 1;"></app-social-networks>
+  <app-social-networks style="z-index: 2;"></app-social-networks>
   <hr class="m-0" />
-  <app-nav-menu style="box-shadow: 0 0 20px rgba(0,0,0,0.2);"></app-nav-menu>
+  <app-nav-menu style="box-shadow: 0 0 20px rgba(0,0,0,0.2); z-index: 1;"></app-nav-menu>
   <hr class="m-0" />
   <div class="main-block">
     <div class="main-block-content container">
@@ -9,7 +9,7 @@
       <h3 class="main-block-subtitle">для Ваших особых случаев</h3>
       <div class="main-block-btn">
         <button class="button" [routerLink]="['/search']">
-          <span class="button-text">В каталог</span>
+          <span class="button-text" [routerLink]="['/search']">В каталог</span>
         </button>
       </div>
     </div>

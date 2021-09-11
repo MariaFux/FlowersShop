@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
+  headerText = "Каталог";
   
   constructor() {
   }
