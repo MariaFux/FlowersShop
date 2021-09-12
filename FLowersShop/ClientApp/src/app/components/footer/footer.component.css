@@ -87,6 +87,11 @@
   opacity: 0.5;
 }
 
+.cards-arrow-container {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 .footer-cards img {
   width: 42px;
   vertical-align: middle;
@@ -99,6 +104,10 @@
     width: 30px;
     opacity: 1;
   }
+
+.top-link-container {
+    justify-content: end;
+}
 
 .top-link {
   text-decoration: none;
@@ -127,4 +136,31 @@
 
 .up-arrow-icon {
   background-image: url('/assets/images/up-arrow.svg');
+}
+
+@media (max-width: 576px) {
+  .top-link-text {
+    font-size: 13px;
+  }
+
+  .arrow-up {
+      height: 27px;
+      width: 27px;
+  }
+}
+
+@media (max-width: 376px) {
+  .cards-arrow-container {
+    flex-direction: column;
+  }
+
+  .footer-cards {
+    max-width: 100%;
+  }
+
+  .top-link-container {
+    max-width: 100%;
+    justify-content: start;
+    margin-top: 8px;
+  }
 }
