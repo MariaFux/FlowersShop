@@ -10,6 +10,7 @@ using FlowersShop.DAL.DataContext;
 using FlowersShop.DAL.Repositories;
 using FlowersShop.BLL.Mapper;
 using AutoMapper;
+using FlowersShop.BLL.Services;
 
 namespace FlowersShop
 {
@@ -28,8 +29,11 @@ namespace FlowersShop
             var ConnectionString = Configuration.GetConnectionString("DbConStr");
 
             services.AddDbContext<FlowersShopDbContext>(options => options.UseSqlServer(ConnectionString));
+
             services.AddTransient<CategoryRepo>();
             services.AddTransient<ProductRepo>();
+
+            services.AddTransient<CategoryService>();
 
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -39,7 +43,7 @@ namespace FlowersShop
             IMapper mapper = mappingConfig.CreateMapper();
             services.AddSingleton(mapper);
 
-            services.AddControllersWithViews();
+            services.AddControllers();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -54,14 +58,7 @@ namespace FlowersShop
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
             if (!env.IsDevelopment())
             {
@@ -72,9 +69,7 @@ namespace FlowersShop
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller}/{action=Index}/{id?}");
+                endpoints.MapControllers();
             });
 
             app.UseSpa(spa =>
