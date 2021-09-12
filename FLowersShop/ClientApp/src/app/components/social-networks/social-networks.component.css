@@ -4,6 +4,12 @@
   margin-right: 10px;
 }
 
+.social-networks-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .social-networks-menu {
   list-style: none;
   margin: 0;
@@ -64,4 +70,14 @@
 
 .telegram-link:hover {
   background-image: url('/assets/images/telegram-gray.svg');
+}
+
+@media (max-width: 576px) {
+    .social-networks-container {
+        flex-direction: column;
+    }
+
+    .social-networks-container > div {
+        margin-bottom: 5px;
+    }
 }
