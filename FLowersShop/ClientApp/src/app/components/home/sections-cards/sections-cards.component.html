@@ -1,63 +1,15 @@
 <div class="row">
-  <div class="col-xl-4">
-    <div class="card card-1 mb-4">
-      <h3 class="card-title">Цветы</h3>
-      <p class="card-text">Широкий ассортимент цветов!</p>
+  <div class="col-xl-4" *ngFor="let category of categories; let i = index">
+    <div class="card card-background mb-4"
+         [ngClass]="{'card-odd': i%2!==0, 'card-even': i%2===0, 'card-background-lg': i <= 2, 'card-background-xs-1': i <= 2, 'card-background-xs-2': i > 2}"
+         [style.background-image]="'url(' + category.photoPath +')'"
+         [style.background-position]="i > 2 ? 'bottom -120px center' : 'bottom -80px center'">
+      <h3 class="card-title">{{category.name}}</h3>
+      <p class="card-text">{{category.description}}</p>
       <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'flowers'}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>
     </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card-2 mb-4">
-      <h3 class="card-title">Букеты</h3>
-      <p class="card-text">Сборные и свадебные букеты!</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'bouquets'}">
-        <span class="button-text">Еще</span>
-        <span class="view-button-icon"></span>
-      </button>
-    </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card-3 mb-4">
-      <h3 class="card-title">Композиции</h3>
-      <p class="card-text">В шляпке, на оазисе, в корзинке!</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'compositions'}">
-        <span class="button-text">Еще</span>
-        <span class="view-button-icon"></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="col-xl-4">
-    <div class="card card-4 mb-4">
-      <h3 class="card-title">Подарки</h3>
-      <p class="card-text">Гелиевые шары, открытки!</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'presents'}">
-        <span class="button-text">Еще</span>
-        <span class="view-button-icon"></span>
-      </button>
-    </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card-5 mb-4">
-      <h3 class="card-title">Пиньяты</h3>
-      <p class="card-text">Пиньята на детский праздник сможет порадовать вашего ребенка!</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'pinatas'}">
-        <span class="button-text">Еще</span>
-        <span class="view-button-icon"></span>
-      </button>
-    </div>
-  </div>
-  <div class="col-xl-4">
-    <div class="card card-6 mb-4">
-      <h3 class="card-title">Свечи</h3>
-      <p class="card-text">Свечи ручной работы на любой вкус и цвет!</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'candles'}">
-        <span class="button-text">Еще</span>
-        <span class="view-button-icon"></span>
-      </button>
-    </div>
-  </div>
+  </div>  
 </div>
