@@ -6,7 +6,7 @@
          [style.background-position]="i > 2 ? 'bottom -120px center' : 'bottom -80px center'">
       <h3 class="card-title">{{category.name}}</h3>
       <p class="card-text">{{category.description}}</p>
-      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: 'flowers'}">
+      <button class="button card-btn" [routerLink]="['/search']" [queryParams]="{filterBy: category.id}">
         <span class="button-text">Еще</span>
         <span class="view-button-icon"></span>
       </button>

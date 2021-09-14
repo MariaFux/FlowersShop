@@ -21,7 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { MatGridList, MatGridListModule, MatGridTile } from '@angular/material';
+import { MatGridListModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -40,15 +40,14 @@ import { MatGridList, MatGridListModule, MatGridTile } from '@angular/material';
     SearchComponent,
     SocialNetworksComponent,
     DeliveryPayComponent,
-    ContactsComponent,
-    MatGridList,
-    MatGridTile
+    ContactsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatGridListModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },

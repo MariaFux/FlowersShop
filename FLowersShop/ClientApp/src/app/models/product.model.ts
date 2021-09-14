@@ -1,6 +1,6 @@
-export interface Category {
-  id: number;
+export interface Product {
   name: string;
   description: string;
   photoPath: string;
+  categoryId: number;
 }

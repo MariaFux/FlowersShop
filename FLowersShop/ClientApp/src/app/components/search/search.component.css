@@ -1,5 +1,5 @@
 .icon-22 {
-  height: 22px;
+  height: 16px;
   width: 22px;
   margin-right: 10px;
 }
@@ -9,20 +9,40 @@
   flex: 1 0 auto;
 }
 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('/assets/images/down-arrow.svg');
+  background-repeat: no-repeat;
+  background-size: 10px;
+  background-position: right 10px center;
+}
+
+select:focus-visible {
+    outline: none;
+}
+
+  select::-ms-expand {
+    display: none;
+  }
+
 .search {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .search-icon {
   background-image: url('/assets/images/search.svg');
+  background-repeat: no-repeat;
 }
 
 input:focus-visible {
   outline: none;
 }
 
-.search input {
+.search input, select {
   border: 1px solid rgba(35, 40, 44, 0.3);
   border-radius: 15px;
   padding: 4px 12px;

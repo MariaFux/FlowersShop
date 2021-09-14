@@ -34,6 +34,7 @@ namespace FlowersShop
             services.AddTransient<ProductRepo>();
 
             services.AddTransient<CategoryService>();
+            services.AddTransient<ProductService>();
 
             var mappingConfig = new MapperConfiguration(mc =>
             {

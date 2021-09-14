@@ -1,9 +1,9 @@
 ﻿using FlowersShop.DAL.DataObjects.ProductModels;
 using System.Threading.Tasks;
 
-namespace FlowersShop.DAL.Interfaces
+namespace FlowersShop.BLL.Interfaces
 {
-    interface IProductRepo
+    interface IProductService
     {
         Task<ProductModel> GetProductsAsync(GetProductsModel model);
     }
