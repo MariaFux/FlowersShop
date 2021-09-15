@@ -4,6 +4,7 @@ namespace FlowersShop.DAL.DataObjects.ProductModels
 {
     public class GetProductsModel
     {
-        public SortFilterModel ListSortModel { get; set; }
+        public FilterSortModel FilterSortModel { get; set; }
+        public string SearchValue { get; set; }
     }
 }

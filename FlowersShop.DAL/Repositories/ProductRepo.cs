@@ -21,7 +21,10 @@ namespace FlowersShop.DAL.Repositories
 
         public async Task<ProductModel> GetProductsAsync(GetProductsModel model)
         {
-            var query = _context.Products;
+            var query = _context.Products.Where(x => 
+                string.IsNullOrWhiteSpace(model.SearchValue) ||
+                (x.Name ?? "").Contains(model.SearchValue) ||
+                (x.Description ?? "").Contains(model.SearchValue)); ;
 
             var totalCount = await query.CountAsync();
 
@@ -35,9 +38,9 @@ namespace FlowersShop.DAL.Repositories
                     Price = x.Price,
                     CategoryId = x.CategoryId
                 })
-                .OrderBy(model.ListSortModel.SortingModels)
-                .Skip(model.ListSortModel.Skip)
-                .Take(model.ListSortModel.Take)
+                .OrderBy(model.FilterSortModel.SortingModels)
+                .Skip(model.FilterSortModel.Skip)
+                .Take(model.FilterSortModel.Take)
                 .ToListAsync();
 
             return new ProductModel

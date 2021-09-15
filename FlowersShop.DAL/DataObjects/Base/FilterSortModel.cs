@@ -2,7 +2,7 @@
 
 namespace FlowersShop.DAL.DataObjects.Base
 {
-    public class SortFilterModel
+    public class FilterSortModel
     {
         public List<FilterModel> FilterModels { get; set; }
         public List<SortingModel> SortingModels { get; set; }
