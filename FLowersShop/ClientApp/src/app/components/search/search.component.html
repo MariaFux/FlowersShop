@@ -19,22 +19,26 @@
           </div>
           <div class="search col-8">
             <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
-            <input type="text" class="col-11" placeholder="Поиск">
+            <input type="text" class="col-11" placeholder="Поиск"
+                   [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
+                   (paste)="searchValuePasted()">
           </div>
         </div>
-        <div class="catalog-grid col-12">
+        <div *ngIf="isLoading" class="spinner col-12 mt-5">
+          <mat-spinner></mat-spinner>
+        </div>
+        <div *ngIf="!isLoading" class="catalog-grid col-12">
           <mat-grid-list cols="4" rowHeight="385px">
-            <mat-grid-tile>
-              <div class="goods-card">
-                <img src="assets/images/goods1.png" alt="image: flower" class="goods-image" />
-                <h3 class="goods-title">Гербера</h3>
-                <p class="goods-description">Желтая</p>
-                <a class="goods-price">4 BYN</a>
-              </div>
-            </mat-grid-tile>
-            <mat-grid-tile>2</mat-grid-tile>
-            <mat-grid-tile>3</mat-grid-tile>
-            <mat-grid-tile>4</mat-grid-tile>
+            <ng-container *ngFor="let good of gridData.data">
+              <mat-grid-tile>
+                <div class="goods-card">
+                  <img [src]="good.photoPath" class="goods-image" />
+                  <h3 class="goods-title">{{good.name}}</h3>
+                  <p class="goods-description">{{good.description}}</p>
+                  <a class="goods-price">{{good.price}} BYN</a>
+                </div>
+              </mat-grid-tile>
+            </ng-container>
           </mat-grid-list>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, take, takeUntil } from 'rxjs/operators';
 import { FilterSort } from '../../models/filter-sort.model';
+import { GridData } from '../../models/gridData';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product.service';
 
@@ -20,6 +21,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   searchSubject = new Subject();
 
   filterSortState: FilterSort = new FilterSort();
+
+  gridData: GridData = {
+    data: [],
+    total: 0
+  };
+
+  isLoading = false;
 
   private unsubscribeAll$ = new Subject<void>();
   
@@ -53,10 +61,25 @@ export class SearchComponent implements OnInit, OnDestroy {
       searchValue: this.searchValue
     }
 
+    this.isLoading = true;
+
     this.productService.getProducts(searchModel)
       .pipe(takeUntil(this.unsubscribeAll$))
-      .subscribe(x => {
-        console.log(x);
-      })
+      .subscribe(
+        x => this.gridData = {
+            data: x.data,
+            total: x.total
+        },
+        err => { },
+        () => setTimeout(x => this.isLoading = false, 200)
+      );
+  }
+
+  searchValueChanged() {
+    this.searchSubject.next();
+  }
+
+  searchValuePasted() {
+    setTimeout(() => this.searchSubject.next(), 0);
   }
 }

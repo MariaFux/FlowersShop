@@ -42,6 +42,7 @@
     <None Remove="ClientApp\src\app\models\category.model.ts" />
     <None Remove="ClientApp\src\app\models\filter-sort.model.ts" />
     <None Remove="ClientApp\src\app\models\filterModel.ts" />
+    <None Remove="ClientApp\src\app\models\gridData.ts" />
     <None Remove="ClientApp\src\app\models\product.model.ts" />
     <None Remove="ClientApp\src\app\models\sortDescriptor.ts" />
     <None Remove="ClientApp\src\app\services\category.service.ts" />
@@ -89,6 +90,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\components\screen-header\screen-header.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\filter-sort.model.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\filterModel.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\gridData.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\models\product.model.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

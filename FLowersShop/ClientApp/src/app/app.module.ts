@@ -22,6 +22,7 @@ import { SocialNetworksComponent } from './components/social-networks/social-net
 import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { MatGridListModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { MatGridListModule } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },

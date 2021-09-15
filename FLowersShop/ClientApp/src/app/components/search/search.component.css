@@ -45,7 +45,7 @@ input:focus-visible {
 .search input, select {
   border: 1px solid rgba(35, 40, 44, 0.3);
   border-radius: 15px;
-  padding: 4px 12px;
+  padding: 4px 20px;
   font-size: 14px;
 }
 
@@ -54,8 +54,8 @@ input:focus-visible {
   }
 
 .catalog-grid {
-    margin-top: 30px;
-    margin-bottom: 48px;
+  margin-top: 30px;
+  margin-bottom: 48px;
 }
 
 mat-grid-tile {
@@ -100,3 +100,17 @@ mat-grid-tile {
     padding: 0 10px;
     line-height: 28px;
   }
+
+.spinner {
+  display: flex;
+  justify-content: center;
+}
+
+::ng-deep.mat-progress-spinner circle {
+  stroke: #a1b4d8;
+}
+
+mat-spinner, ::ng-deep.mat-progress-spinner svg {
+  width: 70px !important;
+  height: 70px !important;
+}
