@@ -1,8 +1,5 @@
 ﻿using FlowersShop.BLL.Services;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace FlowersShop.Areas.Category.Controllers
@@ -11,7 +8,7 @@ namespace FlowersShop.Areas.Category.Controllers
     [Route("api/[controller]")]
     public class CategoryController : Controller
     {
-        private CategoryService _categoryService;
+        private readonly CategoryService _categoryService;
 
         public CategoryController(CategoryService categoryService)
         {
@@ -23,6 +20,15 @@ namespace FlowersShop.Areas.Category.Controllers
         public async Task<ActionResult> GetCategoriesAsync()
         {
             var categories = await _categoryService.GetCategoriesAsync();
+
+            return Json(categories);
+        }
+
+        [HttpGet]
+        [Route("GetCategoriesForDropdownAsync")]
+        public async Task<ActionResult> GetCategoriesForDropdownAsync()
+        {
+            var categories = await _categoryService.GetCategoriesForDropdownAsync();
 
             return Json(categories);
         }

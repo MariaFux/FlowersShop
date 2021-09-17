@@ -9,7 +9,7 @@ namespace FlowersShop.Areas.Category.Controllers
     [Route("api/[controller]")]
     public class ProductController : Controller
     {
-        private ProductService _productService;
+        private readonly ProductService _productService;
 
         public ProductController(ProductService productService)
         {
