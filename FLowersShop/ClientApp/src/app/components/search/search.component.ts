@@ -20,6 +20,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   products: Product;
   categories: CategoryForDropdown[] = [];
 
+  selectedCategory = "0";
+
   searchValue = '';
   searchSubject = new Subject();
 
