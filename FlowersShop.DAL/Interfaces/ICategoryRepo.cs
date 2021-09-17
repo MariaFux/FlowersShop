@@ -1,7 +1,6 @@
-﻿using FlowersShop.DAL.Entities;
-using System;
+﻿using FlowersShop.DAL.DataObjects.CategoryModels;
+using FlowersShop.DAL.Entities;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FlowersShop.DAL.Interfaces
@@ -9,5 +8,6 @@ namespace FlowersShop.DAL.Interfaces
     interface ICategoryRepo
     {
         Task<List<Category>> GetCategoriesAsync();
+        Task<List<CategoryForDropdown>> GetCategoriesForDropdownAsync();
     }
 }

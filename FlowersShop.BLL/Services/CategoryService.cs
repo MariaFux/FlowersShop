@@ -2,9 +2,7 @@
 using FlowersShop.BLL.DTO;
 using FlowersShop.BLL.Interfaces;
 using FlowersShop.DAL.Repositories;
-using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace FlowersShop.BLL.Services
@@ -24,6 +22,13 @@ namespace FlowersShop.BLL.Services
         {
             var categories = await _categoryRepo.GetCategoriesAsync();
             var categoriesDTO = _mapper.Map<List<CategoryDTO>>(categories);
+            return categoriesDTO;
+        }
+
+        public async Task<List<CategoryForDropdownDTO>> GetCategoriesForDropdownAsync()
+        {
+            var categories = await _categoryRepo.GetCategoriesForDropdownAsync();
+            var categoriesDTO = _mapper.Map<List<CategoryForDropdownDTO>>(categories);
             return categoriesDTO;
         }
     }

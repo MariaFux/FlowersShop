@@ -10,6 +10,7 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <UserSecretsId>063b1bbc-d3ac-4d09-b927-5297e2d508bb</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -35,18 +36,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="ClientApp\src\app\components\cart\cart-summary\cart-summary.component.ts" />
-    <None Remove="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
-    <None Remove="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
-    <None Remove="ClientApp\src\app\components\screen-header\screen-header.component.ts" />
     <None Remove="ClientApp\src\app\models\category.model.ts" />
+    <None Remove="ClientApp\src\app\models\categoryForDropdown.model.ts" />
     <None Remove="ClientApp\src\app\models\filter-sort.model.ts" />
     <None Remove="ClientApp\src\app\models\filterModel.ts" />
     <None Remove="ClientApp\src\app\models\gridData.ts" />
     <None Remove="ClientApp\src\app\models\product.model.ts" />
     <None Remove="ClientApp\src\app\models\sortDescriptor.ts" />
-    <None Remove="ClientApp\src\app\services\category.service.ts" />
-    <None Remove="ClientApp\src\app\services\product.service.ts" />
     <None Remove="ClientApp\src\environments\environment.hmr.ts" />
     <None Remove="ClientApp\src\hmr.ts" />
   </ItemGroup>
@@ -84,27 +80,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <TypeScriptCompile Include="ClientApp\src\app\components\cart\cart-summary\cart-summary.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\components\home\image-gallery\image-gallery.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\components\home\new-arrival\new-arrival.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\components\screen-header\screen-header.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\models\filter-sort.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\models\filterModel.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\models\gridData.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\models\product.model.ts">
+    <TypeScriptCompile Include="ClientApp\src\app\models\categories\categoryForDropdown.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\common\filter-sort.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\common\filterModel.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\common\gridData.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\products\product.model.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\models\category.model.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\models\sortDescriptor.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\services\product.service.ts">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\services\category.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\categories\category.model.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\common\sortDescriptor.ts" />
     <TypeScriptCompile Include="ClientApp\src\environments\environment.hmr.ts" />
     <TypeScriptCompile Include="ClientApp\src\hmr.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

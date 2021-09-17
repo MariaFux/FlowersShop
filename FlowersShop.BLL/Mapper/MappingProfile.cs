@@ -1,9 +1,7 @@
 ﻿using AutoMapper;
 using FlowersShop.BLL.DTO;
+using FlowersShop.DAL.DataObjects.CategoryModels;
 using FlowersShop.DAL.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace FlowersShop.BLL.Mapper
 {
@@ -13,6 +11,7 @@ namespace FlowersShop.BLL.Mapper
         {
             CreateMap<Category, CategoryDTO>().ReverseMap();
             CreateMap<Product, ProductDTO>().ReverseMap();
+            CreateMap<CategoryForDropdown, CategoryForDropdownDTO>().ReverseMap();
         }
     }
 }
