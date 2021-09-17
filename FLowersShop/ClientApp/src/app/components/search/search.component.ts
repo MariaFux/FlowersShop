@@ -2,9 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, take, takeUntil } from 'rxjs/operators';
-import { FilterSort } from '../../models/filter-sort.model';
-import { GridData } from '../../models/gridData';
-import { Product } from '../../models/product.model';
+import { CategoryForDropdown } from '../../models/categories/categoryForDropdown.model';
+import { FilterSort } from '../../models/common/filter-sort.model';
+import { GridData } from '../../models/common/gridData';
+import { Product } from '../../models/products/product.model';
+import { CategoryService } from '../../services/category.service';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -16,6 +18,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   headerText = "Каталог";
 
   products: Product;
+  categories: CategoryForDropdown[] = [];
 
   searchValue = '';
   searchSubject = new Subject();
@@ -33,12 +36,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private categoryService: CategoryService
   ) {
     this.route.queryParams.pipe(takeUntil(this.unsubscribeAll$))
       .subscribe(x => {
         if (!!x) {
-          this.loadData(); //loaded all
+          this.loadData();
         } else {
           //load based on filterBy query parameter
         }
@@ -46,6 +50,8 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.loadCategories();
+
     this.searchSubject.pipe(debounceTime(1000), takeUntil(this.unsubscribeAll$))
       .subscribe(() => this.loadData());
   }
@@ -53,6 +59,12 @@ export class SearchComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.unsubscribeAll$.next();
     this.unsubscribeAll$.complete();
+  }
+
+  loadCategories() {
+    this.categoryService.getCategoriesForDropdown()
+      .pipe(takeUntil(this.unsubscribeAll$))
+      .subscribe(categories => this.categories = categories);
   }
 
   loadData() {

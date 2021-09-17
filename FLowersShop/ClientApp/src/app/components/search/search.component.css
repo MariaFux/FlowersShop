@@ -9,28 +9,22 @@
   flex: 1 0 auto;
 }
 
-select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-image: url('/assets/images/down-arrow.svg');
-  background-repeat: no-repeat;
+::ng-deep.mat-select-arrow {
+  width: 20px !important;
+  height: 20px !important;
   background-size: 10px;
-  background-position: right 10px center;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-image: url(/assets/images/down-arrow.svg);
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-top: 0 !important;
 }
-
-select:focus-visible {
-    outline: none;
-}
-
-  select::-ms-expand {
-    display: none;
-  }
 
 .search {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .search-icon {

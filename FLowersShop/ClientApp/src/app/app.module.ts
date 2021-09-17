@@ -21,7 +21,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SocialNetworksComponent } from './components/social-networks/social-networks.component';
 import { DeliveryPayComponent } from './components/delivery-pay/delivery-pay.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { MatGridListModule } from '@angular/material';
+import { MatFormFieldModule, MatGridListModule, MatSelectModule } from '@angular/material';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
@@ -50,6 +50,8 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     ReactiveFormsModule,
     MatGridListModule,
     MatProgressSpinnerModule,
+    MatFormFieldModule,
+    MatSelectModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'cart', component: CartComponent },

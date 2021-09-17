@@ -6,16 +6,14 @@
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-center align-items-center col-12">
-          <div class="col-4 select">
-            <select id="standard-select" class="w-100">
-              <option value="0">Все</option>
-              <option value="1">Цветы</option>
-              <option value="2">Букеты</option>
-              <option value="3">Композиции</option>
-              <option value="4">Подарки</option>
-              <option value="5">Пиньяты</option>
-              <option value="6">Свечи</option>
-            </select>
+          <div class="col-4">
+            <mat-form-field class="w-100">
+              <mat-select>
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
           <div class="search col-8">
             <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
