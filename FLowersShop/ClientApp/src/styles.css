@@ -52,3 +52,24 @@ button:not(:disabled) {
   line-height: 15px;
   letter-spacing: 0.5px;
 }
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a1b4d8 #e3e2e3;
+}
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #e3e2e3;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #a1b4d8;
+    border-radius: 20px;
+    border: 3px solid #e3e2e3;
+  }
