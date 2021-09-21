@@ -39,6 +39,7 @@ namespace FlowersShop.DAL.Repositories
                     CategoryId = x.CategoryId
                 })
                 .OrderBy(model.FilterSortModel.SortingModels)
+                .Filter(model.FilterSortModel.FilterModels)
                 .Skip(model.FilterSortModel.Skip)
                 .Take(model.FilterSortModel.Take)
                 .ToListAsync();

@@ -50,5 +50,64 @@ namespace FlowersShop.DAL.DataObjects
 
             return (IOrderedQueryable<TEntity>)source.Provider.CreateQuery<TEntity>(resultExpression);
         }
+
+        public static IQueryable<TEntity> Filter<TEntity>(this IQueryable<TEntity> source, List<FilterModel> filters)
+        {
+            if (filters == null || filters.Count == 0)
+            {
+                return source;
+            }
+
+            var type = typeof(TEntity);
+            var xParameter = Expression.Parameter(type, "x");
+            Expression finalExpression = null;
+
+            foreach (var filter in filters)
+            {
+                var property = type.GetProperty(filter.PropertyName, BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+
+                var xProperty = Expression.Property(xParameter, filter.PropertyName);
+
+                Expression expression = null;
+
+                object parsedFilterValue = ChangeType(filter.Value, property.PropertyType);
+
+                switch (filter.OperatorName)
+                {
+                    case "eq":
+                        expression = Expression.Equal(xProperty, Expression.Constant(parsedFilterValue));
+                        break;
+                    default:
+                        continue;
+                }
+
+                finalExpression = finalExpression == null
+                    ? expression
+                    : Expression.AndAlso(finalExpression, expression);
+            }
+
+            var lambdaExpression = Expression.Lambda<Func<TEntity, bool>>(finalExpression, xParameter);
+
+            return source.Where(lambdaExpression);
+        }
+
+        private static object ChangeType(object value, Type conversion)
+        {
+            var t = conversion;
+
+            if (t.IsGenericType && t.GetGenericTypeDefinition().Equals(typeof(Nullable<>)))
+            {
+                if (value == null)
+                {
+                    return null;
+                }
+
+                t = Nullable.GetUnderlyingType(t);
+            }
+            if (conversion.IsEnum)
+                return Enum.Parse(conversion, (string)value);
+
+            return Convert.ChangeType(value, t);
+        }
     }
 }

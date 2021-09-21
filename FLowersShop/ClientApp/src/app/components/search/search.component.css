@@ -73,7 +73,6 @@ input:focus-visible {
 
 ::ng-deep.mat-select-panel {
   min-width: calc(100% + 22px) !important;
-  overflow: hidden !important;
 }
 
   .search input:focus {

@@ -7,14 +7,17 @@
       <div class="row">
         <div class="d-flex justify-content-center align-items-center col-12">
           <div class="col-4">
-            <mat-form-field class="w-100">
-              <mat-select [(value)]="selectedCategory">
-                <mat-option value="0">Все</mat-option>
-                <mat-option *ngFor="let category of categories" [value]="category.id">
-                  {{category.name}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+            <form [formGroup]="filterForm">
+              <mat-form-field class="w-100">
+                <mat-select formGroupName="categoryId" [(value)]="selectedCategory" (selectionChange)="onCategoryChange($event)">
+                  <mat-option [value]="0">Все</mat-option>
+                  <mat-option *ngFor="let category of categories" [value]="category.id">
+                    {{category.name}}
+                  </mat-option>
+                  <input formControlName="operator" type="hidden" />
+                </mat-select>
+              </mat-form-field>
+            </form>
           </div>
           <div class="search col-8">
             <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
