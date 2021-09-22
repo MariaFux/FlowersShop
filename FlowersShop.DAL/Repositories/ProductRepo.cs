@@ -36,6 +36,7 @@ namespace FlowersShop.DAL.Repositories
                     Name = x.Name,
                     Description = x.Description,
                     Price = x.Price,
+                    CreationDate = x.CreationDate,
                     CategoryId = x.CategoryId
                 })
                 .OrderBy(model.FilterSortModel.SortingModels)

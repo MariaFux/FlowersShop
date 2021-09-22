@@ -4,14 +4,16 @@ using FlowersShop.DAL.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FlowersShop.DAL.Migrations
 {
     [DbContext(typeof(FlowersShopDbContext))]
-    partial class FlowersShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210922070017_AddedProductCreationDate")]
+    partial class AddedProductCreationDate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

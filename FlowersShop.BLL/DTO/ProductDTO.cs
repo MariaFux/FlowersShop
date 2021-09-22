@@ -11,6 +11,7 @@ namespace FlowersShop.BLL.DTO
         public string Name { get; set; }
         public string Description { get; set; }
         public double Price { get; set; }
+        public DateTime CreationDate { get; set; }
 
         public int CategoryId { get; set; }
         public CategoryDTO Category { get; set; }
