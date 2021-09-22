@@ -125,6 +125,7 @@ mat-grid-tile {
     border-radius: 20px;
     padding: 0 10px;
     line-height: 28px;
+    text-decoration: none;
   }
 
 .spinner {
@@ -140,3 +141,31 @@ mat-spinner, ::ng-deep.mat-progress-spinner svg {
   width: 70px !important;
   height: 70px !important;
 }
+
+.sorting-block {
+  margin-top: 15px;
+}
+
+.sorting-item {
+  padding: 1px 10px;
+  cursor: pointer;
+  color: #7b96ca;
+}
+
+  .sorting-item:hover {
+    color: #a1b4d8;
+  }
+
+.active-sorting-item {
+  color: #23282c;
+  background: rgba(35, 40, 44, 0.05);
+  border-radius: 25px;
+  border: 1px solid #23282c;
+  padding: 0px 9px;
+}
+
+  .active-sorting-item:hover {
+    border: none;
+    color: #23282c;
+    padding: 1px 10px;
+  }

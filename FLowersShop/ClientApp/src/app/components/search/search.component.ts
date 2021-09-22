@@ -7,6 +7,7 @@ import { CategoryForDropdown } from '../../models/categories/categoryForDropdown
 import { FilterSort } from '../../models/common/filter-sort.model';
 import { FilterModel } from '../../models/common/filterModel';
 import { FilterOperators } from '../../models/common/filterOperators';
+import { SortDescriptor } from '../../models/common/sortDescriptor';
 import { GridData } from '../../models/common/gridData';
 import { Product } from '../../models/products/product.model';
 import { CategoryService } from '../../services/category.service';
@@ -20,7 +21,6 @@ import { ProductService } from '../../services/product.service';
 export class SearchComponent implements OnInit, OnDestroy {
   headerText = "Каталог";
 
-  products: Product;
   categories: CategoryForDropdown[] = [];
 
   selectedCategory = 0;
@@ -38,6 +38,13 @@ export class SearchComponent implements OnInit, OnDestroy {
   filterForm: FormGroup;
 
   isLoading = false;
+
+  isNew = false;
+  isOld = false;
+  isFromLowPrice = false;
+  isFromHighPrice = false;
+  isAscName = false;
+  isDescName = false;
 
   private unsubscribeAll$ = new Subject<void>();
   
@@ -65,7 +72,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         value: [''],
         operator: [FilterOperators.equal]
       })
-    });    
+    });
 
     this.filterForm.valueChanges.pipe(debounceTime(1000), distinctUntilChanged())
       .subscribe(newFormVals => {
@@ -138,5 +145,113 @@ export class SearchComponent implements OnInit, OnDestroy {
     let categoryControlValue: FormControl = this.filterForm.get("categoryId.value") as FormControl;
 
     categoryControlValue.setValue(category.value);
+  }
+
+  onNewClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isNew = !this.isNew;
+    this.isOld = false;
+    this.isFromLowPrice = false;
+    this.isFromHighPrice = false;
+    this.isAscName = false;
+    this.isDescName = false;
+
+    if (this.isNew) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
+  }
+
+  onOldClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isOld = !this.isOld;
+    this.isNew = false;
+    this.isFromLowPrice = false;
+    this.isFromHighPrice = false;
+    this.isAscName = false;
+    this.isDescName = false;
+
+    if (this.isOld) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
+  }
+
+  onFromLowPriceClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isFromLowPrice = !this.isFromLowPrice;
+    this.isNew = false;
+    this.isOld = false;
+    this.isFromHighPrice = false;
+    this.isAscName = false;
+    this.isDescName = false;
+
+    if (this.isFromLowPrice) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
+  }
+
+  onFromHighPriceClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isFromHighPrice = !this.isFromHighPrice;
+    this.isNew = false;
+    this.isOld = false;
+    this.isFromLowPrice = false;
+    this.isAscName = false;
+    this.isDescName = false;
+
+    if (this.isFromHighPrice) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
+  }
+
+  onAscNameClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isAscName = !this.isAscName;
+    this.isNew = false;
+    this.isOld = false;
+    this.isFromLowPrice = false;
+    this.isFromHighPrice = false;
+    this.isDescName = false;
+
+    if (this.isAscName) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
+  }
+
+  onDescNameClick(field: string, dir: any) {
+    this.filterSortState.sortingModels = [];
+
+    this.isDescName = !this.isDescName;
+    this.isNew = false;
+    this.isOld = false;
+    this.isFromLowPrice = false;
+    this.isFromHighPrice = false;
+    this.isAscName = false;
+
+    if (this.isDescName) {
+      const sortingEl: SortDescriptor = { field: field, dir: dir };
+      this.filterSortState.sortingModels.push(sortingEl);
+    }
+
+    this.loadData();
   }
 }

@@ -6,8 +6,9 @@
     <div class="container">
       <div class="row">
         <div class="d-flex justify-content-center align-items-center col-12">
-          <div class="col-4">
-            <form [formGroup]="filterForm">
+          <div class="col-4 p-0 d-flex justify-content-between flex-row align-items-center">
+            <label class="col-4 p-0" style="margin-bottom: 3px;">Категория:</label>
+            <form class="col-8 p-0" [formGroup]="filterForm">
               <mat-form-field class="w-100">
                 <mat-select formGroupName="categoryId" [(value)]="selectedCategory" (selectionChange)="onCategoryChange($event)">
                   <mat-option [value]="0">Все</mat-option>
@@ -17,15 +18,34 @@
                   <input formControlName="operator" type="hidden" />
                 </mat-select>
               </mat-form-field>
-            </form>
+            </form>            
           </div>
           <div class="search col-8">
-            <span class="icon-22 search-icon" [routerLink]="['/search']"></span>
+            <div class="col-1 d-flex justify-content-end" style="padding-right: 5px;">
+              <span class="icon-22 search-icon mr-0"></span>
+            </div>
             <input type="text" class="col-11" placeholder="Поиск"
-                   [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
-                   (paste)="searchValuePasted()">
+                    [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
+                    (paste)="searchValuePasted()">
           </div>
         </div>
+      </div>
+
+      <div class="row sorting-block">
+        <div class="d-flex flex-row justify-content-start align-items-center col-12">
+            <label class="col-1 p-0" style="margin-bottom: 3px;">Сначала:</label>
+            <div class="col-8 p-0 d-flex flex-row justify-content-between">
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isNew}" (click)="onNewClick('creationDate', 'asc')">Новые</div>
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isOld}" (click)="onOldClick('creationDate', 'desc')">Старые</div>
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromLowPrice}" (click)="onFromLowPriceClick('price', 'asc')">По цене ↑</div>
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromHighPrice}" (click)="onFromHighPriceClick('price', 'desc')">По цене ↓</div>
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isAscName}" (click)="onAscNameClick('name', 'asc')">По имени (А-Я)</div>
+              <div class="sorting-item" [ngClass]="{'active-sorting-item': isDescName}" (click)="onDescNameClick('name', 'desc')">По имени (Я-А)</div>
+            </div> 
+        </div>
+      </div>
+
+      <div class="row">
         <div *ngIf="isLoading" class="spinner col-12 mt-5">
           <mat-spinner></mat-spinner>
         </div>
