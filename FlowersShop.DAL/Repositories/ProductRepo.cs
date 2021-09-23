@@ -21,14 +21,12 @@ namespace FlowersShop.DAL.Repositories
 
         public async Task<ProductModel> GetProductsAsync(GetProductsModel model)
         {
-            var query = _context.Products.Where(x => 
+            var query = _context.Products.Where(x =>
                 string.IsNullOrWhiteSpace(model.SearchValue) ||
                 (x.Name ?? "").Contains(model.SearchValue) ||
-                (x.Description ?? "").Contains(model.SearchValue)); ;
+                (x.Description ?? "").Contains(model.SearchValue));
 
-            var totalCount = await query.CountAsync();
-
-            var result = await query
+            var filteredSortedQuery = query
                 .Select(x => new Product
                 {
                     Id = x.Id,
@@ -40,15 +38,20 @@ namespace FlowersShop.DAL.Repositories
                     CategoryId = x.CategoryId
                 })
                 .OrderBy(model.FilterSortModel.SortingModels)
-                .Filter(model.FilterSortModel.FilterModels)
-                .Skip(model.FilterSortModel.Skip)
-                .Take(model.FilterSortModel.Take)
+                .Filter(model.FilterSortModel.FilterModels);
+
+            var filteredSortedTotalCount = await filteredSortedQuery.CountAsync();
+
+            var result = await filteredSortedQuery
+                .Skip((model.FilterSortModel.PageIndex - 1) * model.FilterSortModel.PageSize)
+                .Take(model.FilterSortModel.PageSize)
                 .ToListAsync();
+
 
             return new ProductModel
             {
                 Data = result,
-                TotalCount = totalCount
+                TotalCount = filteredSortedTotalCount
             };
         }
     }

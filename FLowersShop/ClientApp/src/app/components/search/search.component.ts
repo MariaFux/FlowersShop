@@ -37,7 +37,7 @@ export class SearchComponent implements OnInit, OnDestroy {
 
   filterForm: FormGroup;
 
-  isLoading = false;
+  isLoading = true;
 
   isNew = false;
   isOld = false;
@@ -45,6 +45,11 @@ export class SearchComponent implements OnInit, OnDestroy {
   isFromHighPrice = false;
   isAscName = false;
   isDescName = false;
+
+  pageIndex = 1;
+  pageSize = 12;
+
+  totalPages = 0;
 
   private unsubscribeAll$ = new Subject<void>();
   
@@ -83,7 +88,10 @@ export class SearchComponent implements OnInit, OnDestroy {
     categoryControlValue.setValue(this.selectedCategory);
 
     this.searchSubject.pipe(debounceTime(1000), takeUntil(this.unsubscribeAll$))
-      .subscribe(() => this.loadData());
+      .subscribe(() => {
+        this.pageIndex = 1;
+        this.loadData();
+      });
   }
 
   ngOnDestroy(): void {
@@ -98,30 +106,36 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   loadData() {
+    this.filterSortState.pageIndex = this.pageIndex;
+    this.filterSortState.pageSize = this.pageSize;
+
     let searchModel = {
       filterSortModel: this.filterSortState,
       searchValue: this.searchValue
     }
 
-    this.isLoading = true;
-
     this.productService.getProducts(searchModel)
       .pipe(takeUntil(this.unsubscribeAll$))
       .subscribe(
-        x => this.gridData = {
+        x => {
+          this.gridData = {
             data: x.data,
-            total: x.total
+            total: x.totalCount
+          };
+          this.totalPages = Math.ceil(this.gridData.total / this.pageSize);
         },
         err => { },
-        () => setTimeout(x => this.isLoading = false, 200)
+        () => this.isLoading = false
       );
   }
 
   searchValueChanged() {
+    this.isLoading = true;
     this.searchSubject.next();
   }
 
   searchValuePasted() {
+    this.isLoading = true;
     setTimeout(() => this.searchSubject.next(), 0);
   }
 
@@ -138,16 +152,19 @@ export class SearchComponent implements OnInit, OnDestroy {
       }
     });
 
+    this.pageIndex = 1;
     this.loadData();
   }
 
   onCategoryChange(category: any) {
-    let categoryControlValue: FormControl = this.filterForm.get("categoryId.value") as FormControl;
+    this.isLoading = true;
 
-    categoryControlValue.setValue(category.value);
+    let categoryControlValue: FormControl = this.filterForm.get("categoryId.value") as FormControl;
+    categoryControlValue.setValue(category.value);    
   }
 
   onNewClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isNew = !this.isNew;
@@ -160,12 +177,13 @@ export class SearchComponent implements OnInit, OnDestroy {
     if (this.isNew) {
       const sortingEl: SortDescriptor = { field: field, dir: dir };
       this.filterSortState.sortingModels.push(sortingEl);
-    }
+    }    
 
     this.loadData();
   }
 
   onOldClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isOld = !this.isOld;
@@ -184,6 +202,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   onFromLowPriceClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isFromLowPrice = !this.isFromLowPrice;
@@ -202,6 +221,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   onFromHighPriceClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isFromHighPrice = !this.isFromHighPrice;
@@ -220,6 +240,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   onAscNameClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isAscName = !this.isAscName;
@@ -238,6 +259,7 @@ export class SearchComponent implements OnInit, OnDestroy {
   }
 
   onDescNameClick(field: string, dir: any) {
+    this.isLoading = true;
     this.filterSortState.sortingModels = [];
 
     this.isDescName = !this.isDescName;
@@ -252,6 +274,20 @@ export class SearchComponent implements OnInit, OnDestroy {
       this.filterSortState.sortingModels.push(sortingEl);
     }
 
+    this.loadData();
+  }
+
+  onPrevClick() {
+    this.isLoading = true;
+
+    this.pageIndex--;
+    this.loadData();
+  }
+
+  onNextClick() {
+    this.isLoading = true;
+
+    this.pageIndex++;
     this.loadData();
   }
 }

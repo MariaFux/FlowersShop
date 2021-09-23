@@ -4,6 +4,6 @@ import { FilterModel } from "./filterModel";
 export class FilterSort {
   filterModels: FilterModel[] = [];
   sortingModels: SortDescriptor[] = [];
-  skip: number = 0;
-  take: number = 10;
+  pageIndex: number = 1;
+  pageSize: number = 12;
 }

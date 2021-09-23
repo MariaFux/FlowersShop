@@ -169,3 +169,54 @@ mat-spinner, ::ng-deep.mat-progress-spinner svg {
     color: #23282c;
     padding: 1px 10px;
   }
+
+.pagination-block {
+    margin-top: 30px;
+}
+
+  .pagination-block div:first-child:hover .left-chevron-icon {
+    background-image: url('/assets/images/left-chevron-gray.svg');
+  }
+
+  .pagination-block div:last-child:hover .right-chevron-icon {
+    background-image: url('/assets/images/right-chevron-gray.svg');
+  }
+
+.pages-btn-itm {
+    min-width: 40px;
+    display: flex;
+    align-content: center;
+    cursor: pointer;
+}
+
+.pages-status {
+  margin: 0;
+}
+
+.hiddenBtn {
+    display: none;
+}
+
+.prev-next-btns {
+  border: none;
+  background-color: unset;
+}
+
+.btn-icon-22 {
+  height: 22px;
+  width: 22px;
+}
+
+.left-chevron-icon {
+  width: 100%;
+  background-image: url('/assets/images/left-chevron.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.right-chevron-icon {
+  width: 100%;
+  background-image: url('/assets/images/right-chevron.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+}

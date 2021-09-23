@@ -5,7 +5,7 @@
   <div class="search-content px-4 px-md-0">
     <div class="container">
       <div class="row">
-        <div class="d-flex justify-content-center align-items-center col-12">
+        <div class="d-flex justify-content-center align-items-center col-12 p-0">
           <div class="col-4 p-0 d-flex justify-content-between flex-row align-items-center">
             <label class="col-4 p-0" style="margin-bottom: 3px;">Категория:</label>
             <form class="col-8 p-0" [formGroup]="filterForm">
@@ -32,7 +32,7 @@
       </div>
 
       <div class="row sorting-block">
-        <div class="d-flex flex-row justify-content-start align-items-center col-12">
+        <div class="d-flex flex-row justify-content-start align-items-center col-12 p-0">
             <label class="col-1 p-0" style="margin-bottom: 3px;">Сначала:</label>
             <div class="col-8 p-0 d-flex flex-row justify-content-between">
               <div class="sorting-item" [ngClass]="{'active-sorting-item': isNew}" (click)="onNewClick('creationDate', 'asc')">Новые</div>
@@ -49,8 +49,8 @@
         <div *ngIf="isLoading" class="spinner col-12 mt-5">
           <mat-spinner></mat-spinner>
         </div>
-        <div *ngIf="!isLoading" class="catalog-grid col-12">
-          <mat-grid-list cols="4" rowHeight="385px">
+        <div *ngIf="!isLoading && gridData.data.length > 0" class="catalog-grid col-12">
+          <mat-grid-list class="row" cols="4" rowHeight="385px">
             <ng-container *ngFor="let good of gridData.data">
               <mat-grid-tile>
                 <div class="goods-card">
@@ -62,6 +62,22 @@
               </mat-grid-tile>
             </ng-container>
           </mat-grid-list>
+          <div class="col-12 d-flex justify-content-around align-items-center pagination-block">
+            <div class="pages-btn-itm">
+              <button class="btn-icon-22 left-chevron-icon prev-next-btns" (click)="onPrevClick()" [ngClass]="{hiddenBtn: !(pageIndex > 1)}"></button>
+            </div>
+            <div>
+              <p class="pages-status">{{pageIndex}} cтраница из {{totalPages}} {{totalPages > 1 ? 'страниц' : 'страницы'}} </p>
+            </div>
+            <div class="pages-btn-itm">
+              <button class="btn-icon-22 right-chevron-icon prev-next-btns" (click)="onNextClick()" [ngClass]="{hiddenBtn: !(pageIndex < totalPages)}"></button>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="!isLoading && gridData.data.length == 0"
+             class="col-12 mt-5 d-flex justify-content-center"
+             style="font-size: 20px;">
+          Совпадений не найдено
         </div>
       </div>
     </div>
