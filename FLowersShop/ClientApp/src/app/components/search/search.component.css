@@ -146,13 +146,17 @@ mat-spinner, ::ng-deep.mat-progress-spinner svg {
   margin-top: 15px;
 }
 
-.sorting-item {
+.sorting-item-small {
+    font-size: 14px;
+}
+
+.sorting-item, .sorting-item-small {
   padding: 1px 10px;
   cursor: pointer;
   color: #7b96ca;
 }
 
-  .sorting-item:hover {
+  .sorting-item:hover, .sorting-item-small:hover {
     color: #a1b4d8;
   }
 

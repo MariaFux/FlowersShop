@@ -4,9 +4,9 @@
   <app-screen-header style="box-shadow: 0 0 20px rgba(0,0,0,0.2);" [headerText]="headerText"></app-screen-header>
   <div class="search-content px-4 px-md-0">
     <div class="container">
-      <div class="row">
+      <div class="row d-none d-md-flex">
         <div class="d-flex justify-content-center align-items-center col-12 p-0">
-          <div class="col-4 p-0 d-flex justify-content-between flex-row align-items-center">
+          <div class="col-lg-4 col-5 p-0 d-flex justify-content-between flex-row align-items-center">
             <label class="col-4 p-0" style="margin-bottom: 3px;">Категория:</label>
             <form class="col-8 p-0" [formGroup]="filterForm">
               <mat-form-field class="w-100">
@@ -18,39 +18,102 @@
                   <input formControlName="operator" type="hidden" />
                 </mat-select>
               </mat-form-field>
-            </form>            
+            </form>
           </div>
-          <div class="search col-8">
+          <div class="search col-lg-8 col-7 pr-0">
             <div class="col-1 d-flex justify-content-end" style="padding-right: 5px;">
               <span class="icon-22 search-icon mr-0"></span>
             </div>
             <input type="text" class="col-11" placeholder="Поиск"
-                    [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
-                    (paste)="searchValuePasted()">
+                   [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
+                   (paste)="searchValuePasted()">
           </div>
         </div>
       </div>
 
-      <div class="row sorting-block">
+      <div class="row sorting-block d-none d-md-flex">
         <div class="d-flex flex-row justify-content-start align-items-center col-12 p-0">
-            <label class="col-1 p-0" style="margin-bottom: 3px;">Сначала:</label>
-            <div class="col-8 p-0 d-flex flex-row justify-content-between">
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isNew}" (click)="onNewClick('creationDate', 'asc')">Новые</div>
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isOld}" (click)="onOldClick('creationDate', 'desc')">Старые</div>
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromLowPrice}" (click)="onFromLowPriceClick('price', 'asc')">По цене ↑</div>
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromHighPrice}" (click)="onFromHighPriceClick('price', 'desc')">По цене ↓</div>
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isAscName}" (click)="onAscNameClick('name', 'asc')">По имени (А-Я)</div>
-              <div class="sorting-item" [ngClass]="{'active-sorting-item': isDescName}" (click)="onDescNameClick('name', 'desc')">По имени (Я-А)</div>
-            </div> 
+          <div class="col-lg-8 col-12 p-0 d-flex flex-row justify-content-between">
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isNew}" (click)="onNewClick('creationDate', 'desc')">Новые</div>
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isOld}" (click)="onOldClick('creationDate', 'asc')">Старые</div>
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromLowPrice}" (click)="onFromLowPriceClick('price', 'asc')">По цене ↑</div>
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isFromHighPrice}" (click)="onFromHighPriceClick('price', 'desc')">По цене ↓</div>
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isAscName}" (click)="onAscNameClick('name', 'asc')">По имени (А-Я)</div>
+            <div class="sorting-item" [ngClass]="{'active-sorting-item': isDescName}" (click)="onDescNameClick('name', 'desc')">По имени (Я-А)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row d-flex d-md-none">
+        <div class="col-12 p-0 d-flex justify-content-between flex-row align-items-center">
+          <label class="col-4 p-0" style="margin-bottom: 3px; font-size: 14px;">Категория:</label>
+          <form class="col-8 p-0" [formGroup]="filterForm">
+            <mat-form-field class="w-100">
+              <mat-select formGroupName="categoryId" [(value)]="selectedCategory" (selectionChange)="onCategoryChange($event)">
+                <mat-option [value]="0">Все</mat-option>
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.name}}
+                </mat-option>
+                <input formControlName="operator" type="hidden" />
+              </mat-select>
+            </mat-form-field>
+          </form>
+        </div>
+        <div class="search col-12 p-0 mt-3">
+          <div class="col-1 p-0 d-flex">
+            <span class="icon-22 search-icon mr-0"></span>
+          </div>
+          <input type="text" class="col-11" placeholder="Поиск"
+                  [(ngModel)]="searchValue" (keyup)="searchValueChanged()"
+                  (paste)="searchValuePasted()">
+        </div>
+      </div>
+
+      <div class="row mt-3 d-flex d-md-none">
+        <div class="col-12 p-0 d-flex flex-row justify-content-between">
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isNew}" (click)="onNewClick('creationDate', 'desc')">Новые</div>
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isOld}" (click)="onOldClick('creationDate', 'asc')">Старые</div>
+        </div>
+        <div class="col-12 p-0 d-flex flex-row justify-content-between">
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isFromLowPrice}" (click)="onFromLowPriceClick('price', 'asc')">По цене ↑</div>
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isFromHighPrice}" (click)="onFromHighPriceClick('price', 'desc')">По цене ↓</div>
+        </div>
+        <div class="col-12 p-0 d-flex flex-row justify-content-between">
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isAscName}" (click)="onAscNameClick('name', 'asc')">По имени (А-Я)</div>
+          <div class="sorting-item-small" [ngClass]="{'active-sorting-item': isDescName}" (click)="onDescNameClick('name', 'desc')">По имени (Я-А)</div>
         </div>
       </div>
 
       <div class="row">
-        <div *ngIf="isLoading" class="spinner col-12 mt-5">
+        <div *ngIf="isLoading" class="spinner col-12 mt-5 mb-5">
           <mat-spinner></mat-spinner>
         </div>
         <div *ngIf="!isLoading && gridData.data.length > 0" class="catalog-grid col-12">
-          <mat-grid-list class="row" cols="4" rowHeight="385px">
+          <mat-grid-list class="row d-none d-lg-flex" cols="4" rowHeight="385px">
+            <ng-container *ngFor="let good of gridData.data">
+              <mat-grid-tile>
+                <div class="goods-card">
+                  <img [src]="good.photoPath" class="goods-image" />
+                  <h3 class="goods-title">{{good.name}}</h3>
+                  <p class="goods-description">{{good.description}}</p>
+                  <a class="goods-price">{{good.price}} BYN</a>
+                </div>
+              </mat-grid-tile>
+            </ng-container>
+          </mat-grid-list>
+          <mat-grid-list class="row d-none d-md-flex d-lg-none" cols="3" rowHeight="385px">
+            <ng-container *ngFor="let good of gridData.data">
+              <mat-grid-tile>
+                <div class="goods-card">
+                  <img [src]="good.photoPath" class="goods-image" />
+                  <h3 class="goods-title">{{good.name}}</h3>
+                  <p class="goods-description">{{good.description}}</p>
+                  <a class="goods-price">{{good.price}} BYN</a>
+                </div>
+              </mat-grid-tile>
+            </ng-container>
+          </mat-grid-list>
+          <mat-grid-list class="row d-flex d-md-none" cols="1" rowHeight="385px">
             <ng-container *ngFor="let good of gridData.data">
               <mat-grid-tile>
                 <div class="goods-card">
@@ -67,7 +130,7 @@
               <button class="btn-icon-22 left-chevron-icon prev-next-btns" (click)="onPrevClick()" [ngClass]="{hiddenBtn: !(pageIndex > 1)}"></button>
             </div>
             <div>
-              <p class="pages-status">{{pageIndex}} cтраница из {{totalPages}} {{totalPages > 1 ? 'страниц' : 'страницы'}} </p>
+              <p class="pages-status">{{pageIndex}} cтраница из {{totalPages}}</p>
             </div>
             <div class="pages-btn-itm">
               <button class="btn-icon-22 right-chevron-icon prev-next-btns" (click)="onNextClick()" [ngClass]="{hiddenBtn: !(pageIndex < totalPages)}"></button>
@@ -75,7 +138,7 @@
           </div>
         </div>
         <div *ngIf="!isLoading && gridData.data.length == 0"
-             class="col-12 mt-5 d-flex justify-content-center"
+             class="col-12 mt-5 mb-5 d-flex justify-content-center"
              style="font-size: 20px;">
           Совпадений не найдено
         </div>
