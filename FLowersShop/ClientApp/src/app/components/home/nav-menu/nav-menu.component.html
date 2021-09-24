@@ -1,12 +1,12 @@
 <header class="container header px-4 px-md-0">
-  <div class="row justify-content-between align-items-center">
-    <div class="logo d-flex col-3 col-md-2">
+  <div class="row d-block d-sm-flex justify-content-sm-between align-items-center">
+    <div class="logo d-flex col-12 col-sm-3 col-md-2 mt-1 mt-sm-0 pr-lg-0">
       <a [routerLink]="['/']" class="logo-link">
         <img src="assets/images/logo.png" alt="logo: Flowers Shop" class="logo-image" />
       </a>
     </div>
-    <div class="col-lg-8 d-none d-lg-block">
-      <div class="d-flex justify-content-around">
+    <div class="col-lg-9 d-none d-lg-block pl-0">
+      <div class="d-flex justify-content-between">
         <div class="d-flex align-items-center">
           <span class="icon-22 phone-icon"></span>
           <a href="tel:+375 (29) 777-777-77" class="phone-text">+375 (29) 777-777-77</a>
@@ -23,8 +23,8 @@
         </div>
       </div>
     </div>
-    <div class="col-7 col-md-9 d-lg-none">
-      <div class="d-flex justify-content-around">
+    <div class="col-12 col-sm-7 col-md-8 d-lg-none mt-3 mb-2 mt-sm-0 mb-sm-0">
+      <div class="d-flex justify-content-around justify-content-sm-between">
         <div class="d-flex align-items-center">
           <span class="icon-22 phone-icon">
             <a href="tel:+375 (29) 777-777-77" class="phone-link"></a>
@@ -38,11 +38,11 @@
         </div>
       </div>
     </div>
-    <div class="cart col-lg-2 col-md-1 col-2 d-flex justify-content-end">
+    <!--<div class="cart col-lg-2 col-md-1 col-2 d-flex justify-content-end">
       <button class="button" [routerLink]="['/cart']">
         <span class="button-icon cart-icon"></span>
         <span class="button-text d-lg-flex d-none">Корзина</span>
       </button>
-    </div>
+    </div>-->
   </div>
 </header>

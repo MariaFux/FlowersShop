@@ -224,3 +224,13 @@ mat-spinner, ::ng-deep.mat-progress-spinner svg {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+@media (max-width: 350px) {
+  .pages-status {
+    font-size: 14px;
+  }
+
+  .btn-icon-22 {
+    height: 18px;
+  }
+}

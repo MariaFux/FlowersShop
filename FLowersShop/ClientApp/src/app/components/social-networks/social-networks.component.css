@@ -39,6 +39,10 @@
   background-color: #fff;
 }
 
+.social-networks-list .icon-17:last-child {
+  margin-right: 0;
+}
+
 .instagram-icon {
   background-image: url('/assets/images/instagram-black.svg');
   cursor: pointer;
@@ -80,4 +84,15 @@
     .social-networks-container > div {
         margin-bottom: 5px;
     }
+}
+
+@media (max-width: 286px) {
+  .social-networks-menu {
+      display: block !important;
+      text-align: center;
+  }
+
+  .social-networks-menu-item:not(:last-child) {
+    margin-right: 0;
+  }  
 }

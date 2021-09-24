@@ -22,6 +22,10 @@
   background-image: url('/assets/images/shopping-cart-black.svg');
 }
 
+.phone-link .phone-icon {
+    margin: 0;
+}
+
 .phone-icon {
   background-image: url('/assets/images/phone.svg');
 }
@@ -41,6 +45,7 @@
 .search-icon {
   background-image: url('/assets/images/search.svg');
   cursor: pointer;
+  margin: 0;
 }
 
   .search-icon:hover {
@@ -82,6 +87,7 @@
 
 .location-link {
   cursor: pointer;
+  margin: 0;
 }
 
   .location-link:hover {
