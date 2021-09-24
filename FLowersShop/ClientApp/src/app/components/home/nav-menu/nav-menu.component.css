@@ -8,20 +8,6 @@
   margin-right: 10px;  
 }
 
-.button-icon {
-  height: 16px;
-  width: 16px;
-  margin-right: 10px;  
-}
-
-.cart-icon {
-  background-image: url('/assets/images/shopping-cart-white.svg');
-}
-
-.button:hover .cart-icon {
-  background-image: url('/assets/images/shopping-cart-black.svg');
-}
-
 .phone-link .phone-icon {
     margin: 0;
 }
@@ -94,15 +80,7 @@
     background-image: url('/assets/images/location-gray.svg');
   }
 
-@media (max-width: 992px) {
-  .cart .button {
-    padding: 10px 10px;
-  }
-
-  .button-icon {
-      margin-right: 2px;
-  }
-   
+@media (max-width: 992px) {   
   .logo {
       justify-content: center;
   }

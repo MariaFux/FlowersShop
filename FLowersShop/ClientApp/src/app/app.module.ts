@@ -54,7 +54,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatSelectModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'cart', component: CartComponent },
       { path: 'view', component: ViewComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'search', component: SearchComponent },
